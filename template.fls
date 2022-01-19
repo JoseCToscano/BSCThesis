@@ -254,6 +254,15 @@ INPUT /Users/josetoscano/Documents/BSCThesis/preamble.tex
 INPUT /Users/josetoscano/Documents/BSCThesis/preamble.tex
 INPUT /usr/local/texlive/2021/texmf-dist/fonts/tfm/public/cm/cmr12.tfm
 INPUT /usr/local/texlive/2021/texmf-dist/fonts/tfm/public/cm/cmbx12.tfm
+INPUT /Users/josetoscano/Documents/BSCThesis/template.toc
+INPUT /Users/josetoscano/Documents/BSCThesis/template.toc
+INPUT /Users/josetoscano/Documents/BSCThesis/template.toc
+INPUT /usr/local/texlive/2021/texmf-dist/fonts/tfm/public/cm/cmbx10.tfm
+OUTPUT /Users/josetoscano/Documents/BSCThesis/template.toc
+INPUT /Users/josetoscano/Documents/BSCThesis/template.lof
+INPUT /Users/josetoscano/Documents/BSCThesis/template.lof
+INPUT /Users/josetoscano/Documents/BSCThesis/template.lof
+OUTPUT /Users/josetoscano/Documents/BSCThesis/template.lof
 INPUT /Users/josetoscano/Documents/BSCThesis/chapter_introduction.tex
 OUTPUT /Users/josetoscano/Documents/BSCThesis/chapter_introduction.aux
 INPUT /Users/josetoscano/Documents/BSCThesis/chapter_introduction.tex
@@ -277,7 +286,6 @@ INPUT /Users/josetoscano/Documents/BSCThesis/chapter_general_overview.tex
 INPUT /Users/josetoscano/Documents/BSCThesis/chapter_general_overview.tex
 INPUT /Users/josetoscano/Documents/BSCThesis/chapter_general_overview.tex
 INPUT /Users/josetoscano/Documents/BSCThesis/chapter_general_overview.tex
-INPUT /usr/local/texlive/2021/texmf-dist/fonts/tfm/public/cm/cmbx10.tfm
 INPUT /usr/local/texlive/2021/texmf-dist/fonts/tfm/jknappen/ec/tcrm1000.tfm
 INPUT /Users/josetoscano/Documents/BSCThesis/template.aux
 INPUT /Users/josetoscano/Documents/BSCThesis/chapter_introduction.aux

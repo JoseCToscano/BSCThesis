@@ -1,0 +1,19 @@
+\contentsline {chapter}{List of Figures}{2}{}%
+\contentsline {chapter}{\numberline {1}Introduction}{1}{}%
+\contentsline {section}{\numberline {1.1}Motivation}{1}{}%
+\contentsline {section}{\numberline {1.2}Starting points}{1}{}%
+\contentsline {chapter}{\numberline {2}General overview}{1}{}%
+\contentsline {section}{\numberline {2.1}Current business pipelines}{1}{}%
+\contentsline {subsection}{\numberline {2.1.1}Understanding Atrato’s Partners, Merchants and Stores}{1}{}%
+\contentsline {subsection}{\numberline {2.1.2}Disbursement process}{1}{}%
+\contentsline {subsubsection}{Partner’s dashboard}{2}{}%
+\contentsline {subsection}{\numberline {2.1.3}Compatibility with current business and application processes}{2}{}%
+\contentsline {section}{\numberline {2.2}Automation of disbursement process requirements}{2}{}%
+\contentsline {section}{\numberline {2.3}Balance system for partners}{2}{}%
+\contentsline {subsection}{\numberline {2.3.1}Balance Updates}{3}{}%
+\contentsline {subsection}{\numberline {2.3.2}Bank Transfers}{3}{}%
+\contentsline {subsection}{\numberline {2.3.3}Triggers}{3}{}%
+\contentsline {subsection}{\numberline {2.3.4}Understanding the correct handling of partner’s commissions}{3}{}%
+\contentsline {section}{\numberline {2.4}Refactor and Changes}{4}{}%
+\contentsline {subsection}{\numberline {2.4.1}Registration of merchant’s pipeline changes}{4}{}%
+\contentsline {subsection}{\numberline {2.4.2}Refactor in partiality selection architecture}{4}{}%
