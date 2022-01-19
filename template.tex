@@ -1,137 +1,34 @@
 \documentclass{report}
 
-% \usepackage[a4paper, tmargin=2.54cm, bmargin=2.54cm, lmargin=3.17cm, rmargin=3.17cm]{geometry}
-% \newcommand{\head}[1]{\textnormal{\textbf{#1}}}
+\usepackage[a4paper, tmargin=2.54cm, bmargin=2.54cm, lmargin=3.17cm, rmargin=3.17cm]{geometry}
+\newcommand{\head}[1]{\textnormal{\textbf{#1}}}
 
-% \usepackage{titlesec}    % Remove the text 'Chapter' from each chapter.
-% \titleformat{\chapter}{\normalfont\huge\bf}{\thechapter}{20pt}{\huge\bf}
+\usepackage{titlesec}    % Remove the text 'Chapter' from each chapter.
+\titleformat{\chapter}{\normalfont\huge\bf}{\thechapter}{20pt}{\huge\bf}
 
-% \title{Master's thesis Health Informatics \the\year}
-% \author{authors}
-% \setcounter{tocdepth}{3}
-% \renewcommand{\figurename}{Figure}
-% \renewcommand{\listfigurename}{List of Figures}
-% \usepackage{graphicx}
-% \usepackage{booktabs}
-% \usepackage{natbib}
-% \usepackage{xcolor}
-% %\usepackage{helvet}
+\title{Bachelor's thesis \the\year}
+\author{authors}
+\setcounter{tocdepth}{3}
+\renewcommand{\figurename}{Figure}
+\renewcommand{\listfigurename}{List of Figures}
+\usepackage{graphicx}
+\usepackage{booktabs}
+\usepackage{natbib}
+\usepackage{xcolor}
+\usepackage{helvet}
 
-% %MORE PACKAGES HERE
+% %MORE PACKAGES HERE 
 
 
 \begin{document}
 
-% %%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% %%%% FIRST PAGE
-% % Change the student's name
-% % thesis' title, and supervisors
+\input{cover.tex}
 
-% \thispagestyle{empty}
-% \begin{titlepage}
-%     \hspace{-1.5cm}
-% 	\includegraphics[width=90mm]{assets/logoAtrato.png}
-% 	\hfill
-% 	\includegraphics[width=35mm]{assets/Hochschule-esslingen.svg.png}
-	
-% 	\noindent\begin{small} \sffamily
-% 		\begin{minipage}{0.65\textwidth}
-% 			Master's Programme in Health Informatics\\
-% 			Spring Semester \the\year\\
-% 			Degree thesis, 30 Credits\\
-% 		\end{minipage}
-% 	\hrule
-% 	\end{small}
+\input{quote.tex}
 
-% 	%Thesis title
-% 	\vspace{1cm}
-% 	{\LARGE\noindent \textbf{Thesis title} \par}
-% 	\vspace{0.5cm}
-% 	%Thesis subtitle
-% 	{\Large\noindent Subtitle, if any (remove if not applicable) \par}
-% 	\vspace{2cm}
-% 	%Author's name
-% 	{\LARGE\noindent Author: Given name Surname \par} %%%%% CHANGE STUDENT HERE
+\input{abstract.tex}
 
-% 	\vfill
-		
-% 	\hrule
-% 	\vspace{0.3cm}
-	
-% %%% CHANGE SUPERVISORS AND REVIEWERS BELOW
-	
-% 	\begin{table}[h!]
-% 		\begin{small} \sffamily
-% 			\begin{tabular}{p{0.2\textwidth}p{0.8\textwidth}}
-% 				Author: & Given name Surname \\
-% 				Main Supervisor:    & Academic title, Given name Surname, \\
-% 				& Department, University \\
-% 				Co-supervisor:      & Academic title, Given name surname, \\
-% 				& Department, University \\
-% 				Examiner:           & Academic title, Given name Surname, \\ 
-% 				& Department, University
-% 			\end{tabular}
-% 		\end{small}
-% 	\end{table}
-	
-% \end{titlepage}
-
-% \newpage
-% %%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-% \chapter*{Affirmation}
-
-% %%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% % ABSTRACT
-% %%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-% I hereby affirm that this Master thesis was composed by myself, that the work contained herein is my own except where explicitly stated otherwise in the text. This work has not been submitted for any other degree or professional qualification except as specified; nor has it been published. \\
-% \newline
-% City, date
-
-% \vspace{0cm}
-% \noindent\includegraphics[width=0.3\textwidth]{assets/Hochschule-esslingen.svg.png}
-
-% \vspace*{-1.1cm}
-% \noindent \rule{0.3\textwidth}{.3pt}\\
-% \vspace{0.3cm}
-% \noindent \large{Student's name}        %%% CHANGE STUDENT'S NAME HERE
-
-
-% %%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% % ABSTRACT
-% %%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-% \chapter*{Abstract}
-
-% \thispagestyle{empty}
-
-% \textit{\texttt{(no more than 250-300 words)}}
-
-% \subsection*{Background}
-% Describe background shortly
-
-% \subsection*{Aim}
-% Describe the aim of your study
-
-% \subsection*{Method}
-% Describe your methods
-
-% \subsection*{Results}
-% Describe the main results of your study
-
-% \subsection*{Conclusion}
-% State your conclusion
-
-% \subsection*{\emph{Keywords:}} No more than six keywords, preferably MeSH terms
-
-% %%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% % ACKNOWLEDGEMENTS
-% %%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-% \chapter*{Acknowledgement}
-% \thispagestyle{empty}
-% Write acknowledgments here
+\input{preamble.tex}
 
 % \tableofcontents
 % \setcounter{page}{1}
@@ -175,51 +72,9 @@
 % %%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % %%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-% \chapter{Introduction}
-% \setcounter{page}{1}
-% \pagenumbering{arabic}
+|\include{chapter_introduction.tex}
 
-
-% \section{Background}
-
-% This chapter offers an introduction to the thesis and typically introduces the problem, the research question and delimitations.
-
-% It can be nice to include figures already in this first chapter. A picture of a pipe is given in Figure \ref{fig:pipe}.
-
-% \begin{figure} [h]
-% \centering
-% \includegraphics[scale = 0.6]{assets/Hochschule-esslingen.svg.png
-% \caption{A Picture of a Pipe}
-%  \label{fig:pipe}
-% \end{figure}
-
-
-% \subsection{Use subheadings that fit your topic}
-% Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-
-% Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-
-% Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-
-% At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident, similique sunt in culpa qui officia deserunt mollitia animi, id est laborum et dolorum fuga. Et harum quidem rerum facilis est et expedita distinctio. Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil impedit quo minus id quod maxime placeat facere possimus, omnis voluptas assumenda est, omnis dolor repellendus. Temporibus autem quibusdam et aut officiis debitis aut rerum necessitatibus saepe eveniet ut et voluptates repudiandae sint et molestiae non recusandae. Itaque earum rerum hic tenetur a sapiente delectus, ut aut reiciendis voluptatibus maiores alias consequatur aut perferendis doloribus asperiores repellat.
-
-% \section{Problem description}
-
-% Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-
-% \section{Aim}
-
-% Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-
-% \section{Objectives}
-
-% Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-
-% \section{Research questions}
-
-% Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-
-
+\include{chapter_general_overview.tex}
 
 % \chapter{Methods}
 
@@ -303,6 +158,5 @@
 
 % \chapter{Another Appendix}
 
-Hello World
 
 \end{document}
