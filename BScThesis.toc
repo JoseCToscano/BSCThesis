@@ -21,28 +21,27 @@
 \contentsline {chapter}{\numberline {3}Development of Balance System}{15}{}%
 \contentsline {section}{\numberline {3.1}Development of module through OOP, managing models and controllers}{15}{}%
 \contentsline {subsection}{\numberline {3.1.1}Balance Updates}{15}{}%
-\contentsline {subsubsection}{UML}{15}{}%
-\contentsline {subsubsection}{Balance Updates Status}{15}{}%
-\contentsline {subsubsection}{Balance Updates Types}{15}{}%
-\contentsline {subsubsection}{Overwriting Balance Updates}{15}{}%
+\contentsline {subsubsection}{Balance Updates Types}{16}{}%
+\contentsline {subsubsection}{Balance Updates Status}{16}{}%
+\contentsline {subsubsection}{Overwriting Balance Updates}{16}{}%
 \contentsline {section}{\numberline {3.2}Ensure correct functionality and error handling through MySQL Transactions}{17}{}%
 \contentsline {section}{\numberline {3.3}Detailed visibility and traceability of full process}{17}{}%
 \contentsline {subsection}{\numberline {3.3.1}Implementation of existing Logging system}{17}{}%
 \contentsline {section}{\numberline {3.4}Security through implementation of existing IAM Module}{17}{}%
 \contentsline {section}{\numberline {3.5}Manual implementation of automation}{17}{}%
-\contentsline {chapter}{\numberline {4}Access to the Digital Mexican Banking System}{18}{}%
-\contentsline {section}{\numberline {4.1}General Overview}{18}{}%
-\contentsline {section}{\numberline {4.2}Requirements}{18}{}%
-\contentsline {section}{\numberline {4.3}STP’s API web services}{18}{}%
-\contentsline {section}{\numberline {4.4}Webhooks for Bank Transfers Status Updates}{19}{}%
-\contentsline {subsection}{\numberline {4.4.1}Understanding the different incoming payment order status updates}{19}{}%
-\contentsline {subsection}{\numberline {4.4.2}Liquidated status update}{21}{}%
-\contentsline {subsection}{\numberline {4.4.3}Cancelled status update}{22}{}%
-\contentsline {subsection}{\numberline {4.4.4}Returned status update}{22}{}%
-\contentsline {chapter}{\numberline {5}Progressive deployment of Balance System}{26}{}%
-\contentsline {section}{\numberline {5.1}First steps and validation}{26}{}%
-\contentsline {section}{\numberline {5.2}Deployment to production}{26}{}%
-\contentsline {chapter}{\numberline {6}Discussion and Conclusions}{27}{}%
-\contentsline {section}{\numberline {6.1}Discussion}{27}{}%
-\contentsline {section}{\numberline {6.2}Conclusion}{27}{}%
-\contentsline {section}{\numberline {6.3}Further Work}{27}{}%
+\contentsline {chapter}{\numberline {4}Access to the Digital Mexican Banking System}{19}{}%
+\contentsline {section}{\numberline {4.1}General Overview}{19}{}%
+\contentsline {section}{\numberline {4.2}Requirements}{19}{}%
+\contentsline {section}{\numberline {4.3}STP’s API web services}{19}{}%
+\contentsline {section}{\numberline {4.4}Webhooks for Bank Transfers Status Updates}{20}{}%
+\contentsline {subsection}{\numberline {4.4.1}Understanding the different incoming payment order status updates}{20}{}%
+\contentsline {subsection}{\numberline {4.4.2}Liquidated status update}{22}{}%
+\contentsline {subsection}{\numberline {4.4.3}Cancelled status update}{23}{}%
+\contentsline {subsection}{\numberline {4.4.4}Returned status update}{23}{}%
+\contentsline {chapter}{\numberline {5}Progressive deployment of Balance System}{27}{}%
+\contentsline {section}{\numberline {5.1}First steps and validation}{27}{}%
+\contentsline {section}{\numberline {5.2}Deployment to production}{27}{}%
+\contentsline {chapter}{\numberline {6}Discussion and Conclusions}{28}{}%
+\contentsline {section}{\numberline {6.1}Discussion}{28}{}%
+\contentsline {section}{\numberline {6.2}Conclusion}{28}{}%
+\contentsline {section}{\numberline {6.3}Further Work}{28}{}%
