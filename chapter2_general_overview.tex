@@ -1,6 +1,4 @@
 \chapter{General overview}
-\setcounter{page}{1}
-\pagenumbering{arabic}
 
 
 \section{Current business pipelines}
@@ -52,9 +50,18 @@ Current business processes and the existing models for merchants, stores and all
 \subsection{Registration of merchant’s pipeline changes}
 During the registration process of any new merchant and their corresponding stores involved, the banking information of the stores should now be a required field. Once a merchant is added, its first store should be added as well, and every time a store is added its banking information should be included.
 The Treasury team oversees validating a merchant’s commission depending on the terms agreed upon their registration. To do this, a new attribute, isValidated, will be added to both the Merchant and the Store models indicating if the information has already been validated by the Treasury team. This extra validation step is now included as part of the registration process of a merchant. Every time the information of a merchant or a store is added or edited, the isValidated flag will be set back to false, indicating that a new validation of the Treasury team is needed.
-The whole registration pipeline is mounted in a dashboard developed for internal use with CRUD operations. With any subtle change in the Update method, as shown in Figure N, the isValidated flag will always turn back to false when used, requiring an additional validation.
+The whole registration pipeline is mounted in a dashboard developed for internal use with CRUD operations. With any subtle change in the Update method, as shown in the code snippet below the isValidated flag will always turn back to false when used, requiring an additional validation.
 
-<<<<<<<<figure>>>>>>>
+\begin{verbatim}
+    await getRepository(Merchant).update(
+        merchantId,
+        {
+         ...merchant,
+         isValidated: false,
+        }
+       );
+       
+\end{verbatim}
 
 A merchant cannot be validated if it does not have at least a validated store. Furthermore, any merchant that is not validated will not be displayed as an option in the application form.  Additionally, a new Model will be introduced: Payment Option. Its connection to the Merchant-Store model will be described in the following section.
 
@@ -64,3 +71,22 @@ Previously, whenever a merchant was incorporated to Atrato’s partners a simple
 This Payment Option model will refer to all the possible terms that a store could have and will include details regarding specific interest rates that could vary depending on a customer’s risk profile, and will include applicability filters for date and requested amount, the option to be tagged as a promotion, specifications on the specific merchant’s commission, a trial period specification and very importantly a flag indicating if its commission could be automatically updated to integrate with the on-going changes in a merchant’s commission due to their monthly origination. Please refer to 2.4.2.2 Payments Options UML for specific details on the model.
 Payment Options will also go through the validation step from the Treasury team, following the same structure and process as before. Every store should have at least a validated Payment Option before being completely validated. Now, the complete pipeline goes as follows: 
 Whenever a merchant is added, its first store should also be added, and the first payment option for the store should be added as well. Regarding the validation process, it goes the other way around, payment options should first be validated before attempting to validate a store, and once a store is validated the merchant can be validated as well. All of these is just as a general validation to make sure that there is no merchant that does not have a valid store and that every valid store has at least a valid payment option.
+
+\subsubsection{Diferences between Payments Per Store and Payment Options architecture}
+
+\begin{figure} [h]
+    \centering
+    \includegraphics[scale = 0.6]{assets/uml/Payments_Per_Store.png}
+    \caption{Payments Per Sotre UML}\label{fig:uml_payments_per_store}
+\end{figure}
+
+With the Payments Per Store Model a commission could directly be mapped to a specific number of payments, but there exists zero flexibility regarding a change of commission depending on the requested amount nor any distinction between a regular term or any offered promotion. Furthermore, interest rates need to be handled independently and could not directly be related to the number of payments that a customer selects.
+
+\begin{figure} [h]
+    \centering
+    \includegraphics[scale = 0.6]{assets/uml/PaymentOptions.png}
+    \caption{Payment Option UML}\label{fig:uml_payment_options}
+\end{figure}
+
+Pending: 	
+Add details and describe how payment options work and how they enable the flexibility that was needed regarding the commissions and interest rates….

@@ -1,0 +1,16 @@
+\addvspace {10\p@ }
+\addvspace {10\p@ }
+\contentsline {figure}{\numberline {2.1}{\ignorespaces Payments Per Sotre UML}}{13}{}%
+\contentsline {figure}{\numberline {2.2}{\ignorespaces Payment Option UML}}{14}{}%
+\addvspace {10\p@ }
+\contentsline {figure}{\numberline {3.1}{\ignorespaces Balance Updates State Machine}}{15}{}%
+\contentsline {figure}{\numberline {3.2}{\ignorespaces Processing a credit's cancelation and its affectation to a store's balance system}}{16}{}%
+\addvspace {10\p@ }
+\contentsline {figure}{\numberline {4.1}{\ignorespaces . Dispersion Service REST API Headers}}{18}{}%
+\contentsline {figure}{\numberline {4.2}{\ignorespaces Balance Updates State Machine}}{20}{}%
+\contentsline {figure}{\numberline {4.3}{\ignorespaces Processing internal status of Balance Updates and Bank Transfer for Liquidated payment orders}}{21}{}%
+\contentsline {figure}{\numberline {4.4}{\ignorespaces Processing internal status of Balance Updates and Bank Transfer for Cancelled payment orders}}{22}{}%
+\contentsline {figure}{\numberline {4.5}{\ignorespaces Processing internal status of Balance Updates and Bank Transfer for Returned payment orders. Note the similarity with the Cancelation process}}{23}{}%
+\contentsline {figure}{\numberline {4.6}{\ignorespaces Process for overriding a previously confirmed Balance Update of type Disbursement}}{24}{}%
+\addvspace {10\p@ }
+\addvspace {10\p@ }
