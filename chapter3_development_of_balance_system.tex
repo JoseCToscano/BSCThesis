@@ -38,17 +38,17 @@ Every Balance Update will have a specific \textit{type} attribute. These types a
    \hline
    1 & \textit{Contribution} & Contribution to balance due to a new credit   \\
    \hline
-   1 & \textit{Disbursement} & Disbursement generated through the confirmation of a Bank Transfer   \\
+   2 & \textit{Disbursement} & Disbursement generated through the confirmation of a Bank Transfer   \\
    \hline
-   1 & \textit{Credit Cancelation} & Loads negative balance due to credit cancelation   \\
+   3 & \textit{Credit Cancelation} & Loads negative balance due to credit cancelation   \\
    \hline
-   1 & \textit{Adjustment} & Loads adjustment in balance to be considered in the next Bank Transfer   \\
+   4 & \textit{Adjustment} & Loads adjustment in balance to be considered in the next Bank Transfer   \\
    \hline
-   1 & \textit{Disbursement override} & Overrides the amount addedd to the balance from another Disbursement   \\
+   5 & \textit{Disbursement override} & Overrides the amount addedd to the balance from another Disbursement   \\
    \hline
-   1 & \textit{Balance compensation} & Readjusts the balance of a store by taking previous pending balance to apply immeditaly a credit's contribution   \\
+   6 & \textit{Balance compensation} & Readjusts the balance of a store by taking previous pending balance to apply immeditaly a credit's contribution   \\
    \hline
-   1 & \textit{Balance readjustment} & Readjusts the balance of a store by updating Pending Balance Updates into Applied   \\
+   7 & \textit{Balance readjustment} & Readjusts the balance of a store by updating Pending Balance Updates into Applied   \\
   \hline
 \end{tabularx}
 \end{figure}
