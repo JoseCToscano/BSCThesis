@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2021) (preloaded format=pdflatex 2022.1.19)  20 JAN 2022 12:47
+This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2021) (preloaded format=pdflatex 2022.1.19)  20 JAN 2022 12:58
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -234,7 +234,12 @@ Underfull \hbox (badness 10000) in paragraph at lines 40--49
 
 [1
 
-{/usr/local/texlive/2021/texmf-var/fonts/map/pdftex/updmap/pdftex.map} </Users/josetoscano/Documents/BSCThesis/assets/logoAtrato.png> </Users/josetoscano/Documents/BSCThesis/assets/Hochschule-esslingen.svg.png>]) (/Users/josetoscano/Documents/BSCThesis/quote.tex) (/Users/josetoscano/Documents/BSCThesis/abstract.tex [1]) (/Users/josetoscano/Documents/BSCThesis/preamble.tex [2
+{/usr/local/texlive/2021/texmf-var/fonts/map/pdftex/updmap/pdftex.map} </Users/josetoscano/Documents/BSCThesis/assets/logoAtrato.png> </Users/josetoscano/Documents/BSCThesis/assets/Hochschule-esslingen.svg.png>]) (/Users/josetoscano/Documents/BSCThesis/quote.tex) (/Users/josetoscano/Documents/BSCThesis/abstract.tex [1]
+Underfull \hbox (badness 10000) in paragraph at lines 7--11
+
+ []
+
+) (/Users/josetoscano/Documents/BSCThesis/preamble.tex [2
 
 ]) [3
 
@@ -296,32 +301,130 @@ Underfull \hbox (badness 10000) in paragraph at lines 21--70
 
  (/Users/josetoscano/Documents/BSCThesis/chapter2_general_overview.tex
 Chapter 2.
+
+Underfull \hbox (badness 10000) in paragraph at lines 10--11
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 15--16
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 17--18
+
+ []
+
 [9
 
 
 
 
-] [10] [11] [12]
+]
+Underfull \hbox (badness 10000) in paragraph at lines 24--25
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 26--27
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 28--29
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 33--34
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 35--36
+
+ []
+
+[10]
+Underfull \hbox (badness 10000) in paragraph at lines 40--41
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 42--43
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 47--48
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 55--56
+
+ []
+
+[11]
+Underfull \hbox (badness 10000) in paragraph at lines 61--62
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 63--64
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 73--74
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 75--76
+
+ []
+
+[12]
+Underfull \hbox (badness 10000) in paragraph at lines 94--95
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 96--97
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 98--99
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 100--101
+
+ []
+
 <assets/uml/Payments_Per_Store.png, id=56, 343.2825pt x 171.64125pt>
 File: assets/uml/Payments_Per_Store.png Graphic file (type png)
 <use assets/uml/Payments_Per_Store.png>
-Package pdftex.def Info: assets/uml/Payments_Per_Store.png  used on input line 79.
+Package pdftex.def Info: assets/uml/Payments_Per_Store.png  used on input line 108.
 (pdftex.def)             Requested size: 205.97107pt x 102.98552pt.
-<assets/uml/PaymentOptions.png, id=57, 343.2825pt x 533.995pt>
-File: assets/uml/PaymentOptions.png Graphic file (type png)
-<use assets/uml/PaymentOptions.png>
-Package pdftex.def Info: assets/uml/PaymentOptions.png  used on input line 87.
-(pdftex.def)             Requested size: 205.97107pt x 320.39948pt.
-
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-) [13 </Users/josetoscano/Documents/BSCThesis/assets/uml/Payments_Per_Store.png>] [14 </Users/josetoscano/Documents/BSCThesis/assets/uml/PaymentOptions.png>]
+<assets/uml/PaymentOptions.png, id=57, 343.2825pt x 533.995pt>
+File: assets/uml/PaymentOptions.png Graphic file (type png)
+<use assets/uml/PaymentOptions.png>
+Package pdftex.def Info: assets/uml/PaymentOptions.png  used on input line 116.
+(pdftex.def)             Requested size: 205.97107pt x 320.39948pt.
+[13]) [14 </Users/josetoscano/Documents/BSCThesis/assets/uml/Payments_Per_Store.png> </Users/josetoscano/Documents/BSCThesis/assets/uml/PaymentOptions.png>]
 \openout2 = `chapter3_development_of_balance_system.aux'.
 
  (/Users/josetoscano/Documents/BSCThesis/chapter3_development_of_balance_system.tex
 Chapter 3.
-<assets/diagrams/BalanceUpdatesStateMachine.png, id=66, 612.2875pt x 358.33875pt>
+<assets/diagrams/BalanceUpdatesStateMachine.png, id=67, 612.2875pt x 358.33875pt>
 File: assets/diagrams/BalanceUpdatesStateMachine.png Graphic file (type png)
 <use assets/diagrams/BalanceUpdatesStateMachine.png>
 Package pdftex.def Info: assets/diagrams/BalanceUpdatesStateMachine.png  used on input line 13.
@@ -337,7 +440,7 @@ Overfull \hbox (11.4808pt too wide) in paragraph at lines 13--14
 
 
  </Users/josetoscano/Documents/BSCThesis/assets/diagrams/BalanceUpdatesStateMachine.png>]
-<assets/flowcharts/CreditCancelation.png, id=71, 452.69125pt x 545.03625pt>
+<assets/flowcharts/CreditCancelation.png, id=72, 452.69125pt x 545.03625pt>
 File: assets/flowcharts/CreditCancelation.png Graphic file (type png)
 <use assets/flowcharts/CreditCancelation.png>
 Package pdftex.def Info: assets/flowcharts/CreditCancelation.png  used on input line 28.
@@ -357,67 +460,169 @@ Overfull \hbox (5.74521pt too wide) in paragraph at lines 38--38
 
  (/Users/josetoscano/Documents/BSCThesis/chapter4_Access_to_the_Digital_Mexican_Banking_System.tex
 Chapter 4.
-<assets/diagrams/STPRequestParams.png, id=79, 165.61874pt x 91.34125pt>
+
+Underfull \hbox (badness 10000) in paragraph at lines 5--6
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 7--8
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 9--10
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 15--16
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 17--18
+
+ []
+
+<assets/diagrams/STPRequestParams.png, id=80, 165.61874pt x 91.34125pt>
 File: assets/diagrams/STPRequestParams.png Graphic file (type png)
 <use assets/diagrams/STPRequestParams.png>
-Package pdftex.def Info: assets/diagrams/STPRequestParams.png  used on input line 23.
+Package pdftex.def Info: assets/diagrams/STPRequestParams.png  used on input line 27.
 (pdftex.def)             Requested size: 165.61833pt x 91.34102pt.
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 31--32
+
+ []
+
 [18
 
 
 
 
- </Users/josetoscano/Documents/BSCThesis/assets/diagrams/STPRequestParams.png>] [19]
-<assets/diagrams/BankTransfersStateMachine.png, id=88, 629.35126pt x 402.50375pt>
+]
+Underfull \hbox (badness 10000) in paragraph at lines 45--46
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 47--48
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 49--50
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 53--54
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 55--56
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 57--58
+
+ []
+
+[19 </Users/josetoscano/Documents/BSCThesis/assets/diagrams/STPRequestParams.png>]
+Underfull \hbox (badness 10000) in paragraph at lines 59--60
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 61--62
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 63--64
+
+ []
+
+<assets/diagrams/BankTransfersStateMachine.png, id=89, 629.35126pt x 402.50375pt>
 File: assets/diagrams/BankTransfersStateMachine.png Graphic file (type png)
 <use assets/diagrams/BankTransfersStateMachine.png>
-Package pdftex.def Info: assets/diagrams/BankTransfersStateMachine.png  used on input line 87.
+Package pdftex.def Info: assets/diagrams/BankTransfersStateMachine.png  used on input line 98.
 (pdftex.def)             Requested size: 314.67485pt x 201.25137pt.
- [20 </Users/josetoscano/Documents/BSCThesis/assets/diagrams/BankTransfersStateMachine.png>]
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 104--105
+
+ []
+
+[20]
 <assets/diagrams/LiquidatedStatusUpdate.png, id=93, 1081.03876pt x 593.21625pt>
 File: assets/diagrams/LiquidatedStatusUpdate.png Graphic file (type png)
 <use assets/diagrams/LiquidatedStatusUpdate.png>
-Package pdftex.def Info: assets/diagrams/LiquidatedStatusUpdate.png  used on input line 98.
+Package pdftex.def Info: assets/diagrams/LiquidatedStatusUpdate.png  used on input line 110.
 (pdftex.def)             Requested size: 432.40784pt x 237.28229pt.
 
-Overfull \hbox (15.29031pt too wide) in paragraph at lines 98--99
+Overfull \hbox (15.29031pt too wide) in paragraph at lines 110--111
  [][] 
  []
 
-<assets/diagrams/CancelledStatusUpdate.png, id=94, 723.70375pt x 528.97626pt>
+[21 </Users/josetoscano/Documents/BSCThesis/assets/diagrams/BankTransfersStateMachine.png> </Users/josetoscano/Documents/BSCThesis/assets/diagrams/LiquidatedStatusUpdate.png>]
+Underfull \hbox (badness 10000) in paragraph at lines 116--117
+
+ []
+
+<assets/diagrams/CancelledStatusUpdate.png, id=99, 723.70375pt x 528.97626pt>
 File: assets/diagrams/CancelledStatusUpdate.png Graphic file (type png)
 <use assets/diagrams/CancelledStatusUpdate.png>
-Package pdftex.def Info: assets/diagrams/CancelledStatusUpdate.png  used on input line 110.
+Package pdftex.def Info: assets/diagrams/CancelledStatusUpdate.png  used on input line 122.
 (pdftex.def)             Requested size: 289.47636pt x 211.58675pt.
 
-LaTeX Warning: `h' float specifier changed to `ht'.
+Underfull \hbox (badness 10000) in paragraph at lines 128--129
 
-[21 </Users/josetoscano/Documents/BSCThesis/assets/diagrams/LiquidatedStatusUpdate.png>]
-<assets/diagrams/ReturnedStatusUpdate.png, id=99, 1071.00125pt x 2058.69125pt>
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 130--131
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 132--133
+
+ []
+
+[22 </Users/josetoscano/Documents/BSCThesis/assets/diagrams/CancelledStatusUpdate.png>]
+<assets/diagrams/ReturnedStatusUpdate.png, id=104, 1071.00125pt x 2058.69125pt>
 File: assets/diagrams/ReturnedStatusUpdate.png Graphic file (type png)
 <use assets/diagrams/ReturnedStatusUpdate.png>
-Package pdftex.def Info: assets/diagrams/ReturnedStatusUpdate.png  used on input line 123.
+Package pdftex.def Info: assets/diagrams/ReturnedStatusUpdate.png  used on input line 138.
 (pdftex.def)             Requested size: 428.39291pt x 823.46193pt.
 
-Overfull \hbox (11.27539pt too wide) in paragraph at lines 123--124
+Overfull \hbox (11.27539pt too wide) in paragraph at lines 138--139
  [][] 
  []
 
 
-LaTeX Warning: Float too large for page by 158.89914pt on input line 125.
+LaTeX Warning: Float too large for page by 158.89914pt on input line 140.
 
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-<assets/diagrams/OverrideDisbursement.drawio.png, id=100, 1012.78375pt x 533.995pt>
+<assets/diagrams/OverrideDisbursement.drawio.png, id=105, 1012.78375pt x 533.995pt>
 File: assets/diagrams/OverrideDisbursement.drawio.png Graphic file (type png)
 <use assets/diagrams/OverrideDisbursement.drawio.png>
-Package pdftex.def Info: assets/diagrams/OverrideDisbursement.drawio.png  used on input line 129.
+Package pdftex.def Info: assets/diagrams/OverrideDisbursement.drawio.png  used on input line 144.
 (pdftex.def)             Requested size: 405.10632pt x 213.59421pt.
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-) [22 </Users/josetoscano/Documents/BSCThesis/assets/diagrams/CancelledStatusUpdate.png>] [23 </Users/josetoscano/Documents/BSCThesis/assets/diagrams/ReturnedStatusUpdate.png>] [24 </Users/josetoscano/Documents/BSCThesis/assets/diagrams/OverrideDisbursement.drawio.png>]
+) [23] [24 </Users/josetoscano/Documents/BSCThesis/assets/diagrams/ReturnedStatusUpdate.png>] [25 </Users/josetoscano/Documents/BSCThesis/assets/diagrams/OverrideDisbursement.drawio.png>]
 \openout2 = `chapter5_Progressive_deployment_of_Balance_System.aux'.
 
  (/Users/josetoscano/Documents/BSCThesis/chapter5_Progressive_deployment_of_Balance_System.tex
@@ -427,7 +632,7 @@ Overfull \hbox (10.11382pt too wide) in paragraph at lines 1--1
 |[]\OT1/cmr/bx/n/20.74 Progressive de-ploy-ment of Bal-ance Sys-
  []
 
-) [25
+) [26
 
 
 
@@ -437,25 +642,25 @@ Overfull \hbox (10.11382pt too wide) in paragraph at lines 1--1
 
  (/Users/josetoscano/Documents/BSCThesis/chapter6_Discission_and_Conclusions.tex
 Chapter 6.
-) [26
+) [27
 
 
 
 
 ] (/Users/josetoscano/Documents/BSCThesis/BScThesis.aux (/Users/josetoscano/Documents/BSCThesis/chapter1_introduction.aux) (/Users/josetoscano/Documents/BSCThesis/chapter2_general_overview.aux) (/Users/josetoscano/Documents/BSCThesis/chapter3_development_of_balance_system.aux) (/Users/josetoscano/Documents/BSCThesis/chapter4_Access_to_the_Digital_Mexican_Banking_System.aux) (/Users/josetoscano/Documents/BSCThesis/chapter5_Progressive_deployment_of_Balance_System.aux) (/Users/josetoscano/Documents/BSCThesis/chapter6_Discission_and_Conclusions.aux)) ) 
 Here is how much of TeX's memory you used:
- 3142 strings out of 478994
- 49039 string characters out of 5858184
+ 3144 strings out of 478994
+ 49060 string characters out of 5858184
  358955 words of memory out of 5000000
- 20549 multiletter control sequences out of 15000+600000
- 410246 words of font info for 46 fonts, out of 8000000 for 9000
+ 20550 multiletter control sequences out of 15000+600000
+ 410592 words of font info for 47 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 68i,11n,74p,1372b,298s stack positions out of 5000i,500n,10000p,200000b,80000s
-{/usr/local/texlive/2021/texmf-dist/fonts/enc/dvips/cm-super/cm-super-ts1.enc}{/usr/local/texlive/2021/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/local/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/public/cm-super/sfrm1000.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/urw/helvetic/uhvr8a.pfb>
-Output written on /Users/josetoscano/Documents/BSCThesis/BScThesis.pdf (27 pages, 601650 bytes).
+ 68i,11n,74p,1117b,298s stack positions out of 5000i,500n,10000p,200000b,80000s
+{/usr/local/texlive/2021/texmf-dist/fonts/enc/dvips/cm-super/cm-super-ts1.enc}{/usr/local/texlive/2021/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/local/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/public/cm-super/sfrm1000.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/urw/helvetic/uhvr8a.pfb>
+Output written on /Users/josetoscano/Documents/BSCThesis/BScThesis.pdf (28 pages, 615131 bytes).
 PDF statistics:
- 149 PDF objects out of 1000 (max. 8388607)
- 88 compressed objects within 1 object stream
+ 156 PDF objects out of 1000 (max. 8388607)
+ 93 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
  61 words of extra memory for PDF output out of 10000 (max. 10000000)
 

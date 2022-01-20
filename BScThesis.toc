@@ -9,14 +9,14 @@
 \contentsline {subsubsection}{Partner’s dashboard}{10}{}%
 \contentsline {subsection}{\numberline {2.1.3}Compatibility with current business and application processes}{10}{}%
 \contentsline {section}{\numberline {2.2}Automation of disbursement process requirements}{10}{}%
-\contentsline {section}{\numberline {2.3}Balance system for partners}{10}{}%
+\contentsline {section}{\numberline {2.3}Balance system for partners}{11}{}%
 \contentsline {subsection}{\numberline {2.3.1}Balance Updates}{11}{}%
 \contentsline {subsection}{\numberline {2.3.2}Bank Transfers}{11}{}%
 \contentsline {subsection}{\numberline {2.3.3}Triggers}{11}{}%
-\contentsline {subsection}{\numberline {2.3.4}Understanding the correct handling of partner’s commissions}{11}{}%
+\contentsline {subsection}{\numberline {2.3.4}Understanding the correct handling of partner’s commissions}{12}{}%
 \contentsline {section}{\numberline {2.4}Refactor and Changes}{12}{}%
 \contentsline {subsection}{\numberline {2.4.1}Registration of merchant’s pipeline changes}{12}{}%
-\contentsline {subsection}{\numberline {2.4.2}Refactor in partiality selection architecture}{12}{}%
+\contentsline {subsection}{\numberline {2.4.2}Refactor in partiality selection architecture}{13}{}%
 \contentsline {subsubsection}{Diferences between Payments Per Store and Payment Options architecture}{13}{}%
 \contentsline {chapter}{\numberline {3}Development of Balance System}{15}{}%
 \contentsline {section}{\numberline {3.1}Development of module through OOP, managing models and controllers}{15}{}%
@@ -37,12 +37,12 @@
 \contentsline {section}{\numberline {4.4}Webhooks for Bank Transfers Status Updates}{19}{}%
 \contentsline {subsection}{\numberline {4.4.1}Understanding the different incoming payment order status updates}{19}{}%
 \contentsline {subsection}{\numberline {4.4.2}Liquidated status update}{21}{}%
-\contentsline {subsection}{\numberline {4.4.3}Cancelled status update}{21}{}%
-\contentsline {subsection}{\numberline {4.4.4}Returned status update}{21}{}%
-\contentsline {chapter}{\numberline {5}Progressive deployment of Balance System}{25}{}%
-\contentsline {section}{\numberline {5.1}First steps and validation}{25}{}%
-\contentsline {section}{\numberline {5.2}Deployment to production}{25}{}%
-\contentsline {chapter}{\numberline {6}Discussion and Conclusions}{26}{}%
-\contentsline {section}{\numberline {6.1}Discussion}{26}{}%
-\contentsline {section}{\numberline {6.2}Conclusion}{26}{}%
-\contentsline {section}{\numberline {6.3}Further Work}{26}{}%
+\contentsline {subsection}{\numberline {4.4.3}Cancelled status update}{22}{}%
+\contentsline {subsection}{\numberline {4.4.4}Returned status update}{22}{}%
+\contentsline {chapter}{\numberline {5}Progressive deployment of Balance System}{26}{}%
+\contentsline {section}{\numberline {5.1}First steps and validation}{26}{}%
+\contentsline {section}{\numberline {5.2}Deployment to production}{26}{}%
+\contentsline {chapter}{\numberline {6}Discussion and Conclusions}{27}{}%
+\contentsline {section}{\numberline {6.1}Discussion}{27}{}%
+\contentsline {section}{\numberline {6.2}Conclusion}{27}{}%
+\contentsline {section}{\numberline {6.3}Further Work}{27}{}%
