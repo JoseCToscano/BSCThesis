@@ -355,16 +355,12 @@ INPUT /Users/josetoscano/Documents/BSCThesis/chapter3_development_of_balance_sys
 INPUT /Users/josetoscano/Documents/BSCThesis/chapter3_development_of_balance_system.tex
 INPUT /Users/josetoscano/Documents/BSCThesis/chapter3_development_of_balance_system.tex
 INPUT /Users/josetoscano/Documents/BSCThesis/chapter3_development_of_balance_system.tex
+INPUT /usr/local/texlive/2021/texmf-dist/fonts/tfm/public/cm/cmbxti10.tfm
 INPUT /Users/josetoscano/Documents/BSCThesis/assets/uml/BalanceUpdate.png
 INPUT /Users/josetoscano/Documents/BSCThesis/assets/uml/BalanceUpdate.png
 INPUT /Users/josetoscano/Documents/BSCThesis/assets/uml/BalanceUpdate.png
 INPUT /Users/josetoscano/Documents/BSCThesis/assets/uml/BalanceUpdate.png
 INPUT /Users/josetoscano/Documents/BSCThesis/assets/uml/BalanceUpdate.png
-INPUT /Users/josetoscano/Documents/BSCThesis/assets/diagrams/BalanceUpdatesStateMachine.png
-INPUT /Users/josetoscano/Documents/BSCThesis/assets/diagrams/BalanceUpdatesStateMachine.png
-INPUT /Users/josetoscano/Documents/BSCThesis/assets/diagrams/BalanceUpdatesStateMachine.png
-INPUT /Users/josetoscano/Documents/BSCThesis/assets/diagrams/BalanceUpdatesStateMachine.png
-INPUT /Users/josetoscano/Documents/BSCThesis/assets/diagrams/BalanceUpdatesStateMachine.png
 INPUT /Users/josetoscano/Documents/BSCThesis/assets/flowcharts/CreditCancelation.png
 INPUT /Users/josetoscano/Documents/BSCThesis/assets/flowcharts/CreditCancelation.png
 INPUT /Users/josetoscano/Documents/BSCThesis/assets/flowcharts/CreditCancelation.png
@@ -456,6 +452,7 @@ INPUT /usr/local/texlive/2021/texmf-dist/fonts/enc/dvips/cm-super/cm-super-ts1.e
 INPUT /usr/local/texlive/2021/texmf-dist/fonts/enc/dvips/base/8r.enc
 INPUT /usr/local/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb
 INPUT /usr/local/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb
+INPUT /usr/local/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmbxti10.pfb
 INPUT /usr/local/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb
 INPUT /usr/local/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb
 INPUT /usr/local/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb

@@ -22,26 +22,27 @@
 \contentsline {section}{\numberline {3.1}Development of module through OOP, managing models and controllers}{15}{}%
 \contentsline {subsection}{\numberline {3.1.1}Balance Updates}{15}{}%
 \contentsline {subsubsection}{Balance Updates Types}{16}{}%
-\contentsline {subsubsection}{Balance Updates Status}{16}{}%
-\contentsline {subsubsection}{Overwriting Balance Updates}{16}{}%
-\contentsline {section}{\numberline {3.2}Ensure correct functionality and error handling through MySQL Transactions}{17}{}%
-\contentsline {section}{\numberline {3.3}Detailed visibility and traceability of full process}{17}{}%
-\contentsline {subsection}{\numberline {3.3.1}Implementation of existing Logging system}{17}{}%
-\contentsline {section}{\numberline {3.4}Security through implementation of existing IAM Module}{17}{}%
-\contentsline {section}{\numberline {3.5}Manual implementation of automation}{17}{}%
-\contentsline {chapter}{\numberline {4}Access to the Digital Mexican Banking System}{19}{}%
-\contentsline {section}{\numberline {4.1}General Overview}{19}{}%
-\contentsline {section}{\numberline {4.2}Requirements}{19}{}%
-\contentsline {section}{\numberline {4.3}STP’s API web services}{19}{}%
-\contentsline {section}{\numberline {4.4}Webhooks for Bank Transfers Status Updates}{20}{}%
-\contentsline {subsection}{\numberline {4.4.1}Understanding the different incoming payment order status updates}{20}{}%
-\contentsline {subsection}{\numberline {4.4.2}Liquidated status update}{22}{}%
-\contentsline {subsection}{\numberline {4.4.3}Cancelled status update}{23}{}%
-\contentsline {subsection}{\numberline {4.4.4}Returned status update}{23}{}%
-\contentsline {chapter}{\numberline {5}Progressive deployment of Balance System}{27}{}%
-\contentsline {section}{\numberline {5.1}First steps and validation}{27}{}%
-\contentsline {section}{\numberline {5.2}Deployment to production}{27}{}%
-\contentsline {chapter}{\numberline {6}Discussion and Conclusions}{28}{}%
-\contentsline {section}{\numberline {6.1}Discussion}{28}{}%
-\contentsline {section}{\numberline {6.2}Conclusion}{28}{}%
-\contentsline {section}{\numberline {6.3}Further Work}{28}{}%
+\contentsline {subsubsection}{Overwriting Balance Updates}{17}{}%
+\contentsline {section}{\numberline {3.2}Ensure correct functionality and error handling through MySQL Transactions}{18}{}%
+\contentsline {subsubsection}{Returning a successful Controller Response, handling the Commit and Release of the Query Runner's Transaction}{19}{}%
+\contentsline {subsubsection}{Returning an unsuccessful Controller Response, handling the Rollback and Release of the Query Runner's Transaction}{19}{}%
+\contentsline {section}{\numberline {3.3}Detailed visibility and traceability of full process}{19}{}%
+\contentsline {subsection}{\numberline {3.3.1}Implementation of existing Logging system}{19}{}%
+\contentsline {section}{\numberline {3.4}Security through implementation of existing IAM Module}{19}{}%
+\contentsline {section}{\numberline {3.5}Manual implementation of automation}{19}{}%
+\contentsline {chapter}{\numberline {4}Access to the Digital Mexican Banking System}{20}{}%
+\contentsline {section}{\numberline {4.1}General Overview}{20}{}%
+\contentsline {section}{\numberline {4.2}Requirements}{20}{}%
+\contentsline {section}{\numberline {4.3}STP’s API web services}{20}{}%
+\contentsline {section}{\numberline {4.4}Webhooks for Bank Transfers Status Updates}{21}{}%
+\contentsline {subsection}{\numberline {4.4.1}Understanding the different incoming payment order status updates}{21}{}%
+\contentsline {subsection}{\numberline {4.4.2}Liquidated status update}{23}{}%
+\contentsline {subsection}{\numberline {4.4.3}Cancelled status update}{24}{}%
+\contentsline {subsection}{\numberline {4.4.4}Returned status update}{24}{}%
+\contentsline {chapter}{\numberline {5}Progressive deployment of Balance System}{28}{}%
+\contentsline {section}{\numberline {5.1}First steps and validation}{28}{}%
+\contentsline {section}{\numberline {5.2}Deployment to production}{28}{}%
+\contentsline {chapter}{\numberline {6}Discussion and Conclusions}{29}{}%
+\contentsline {section}{\numberline {6.1}Discussion}{29}{}%
+\contentsline {section}{\numberline {6.2}Conclusion}{29}{}%
+\contentsline {section}{\numberline {6.3}Further Work}{29}{}%

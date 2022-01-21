@@ -1,0 +1,2 @@
+[1] MySQL Official Documentation: https://dev.mysql.com/doc/refman/8.0/en/commit.html
+[2] TypeORM Official Documentation: https://typeorm.io/#/transactions/using-queryrunner-to-create-and-control-state-of-single-database-connection
