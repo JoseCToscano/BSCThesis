@@ -150,7 +150,7 @@ async returnSuccessWithCommit<T>(
 \subsubsection{Returning an unsuccessful Controller Response, handling the Rollback and Release of the Query Runner's Transaction}
 
 
-Just like successful response, the method will take as a parameter the Query Runner, but instead of having the expected response it will take as another argument the \textbf{\textit{controllerError}} created in any exception.
+Just like the successful response, the method will take as a parameter the Query Runner, but instead of having the expected response it will take as another argument the \textbf{\textit{controllerError}} created in any exception.
 
 \begin{verbatim}
 async returnErrorWithRollback(
@@ -167,8 +167,42 @@ The combination of these methods compose the expected \textbf{\textit{Controller
 
 \section{Detailed visibility and traceability of full process}
 
-\subsection{Implementation of existing Logging system}
+The process being automated consists of very delicate matters, therefore, there should exist complete traceability of every action that was executed within the whole system. Every error presented during eny process should be able to be traced and identify easily in order ot take actions, as well as any process that was completed successfully. With this objective in mind, the Balance System was connected to an existing internal logging system, where every process interuption or completion is logged in the database with the respective data and payload necesary for identification.\\
 
-\section{Security through implementation of existing IAM Module}
+Since all actinos regarding the database are hadndled through a QueryRunner, then this logging implementation should also considered these matters. Whenever process is completed and the changes will be commited, the log of this event should be included in the Commit. This applies equally for any action being rollbacked; the changes should e ignored by the trasnaction, but the log of the process should indeed be saved.
+
+The logging system was integrated within the same Base Controller developed for handling Query Runners's transactions as follows:
+
+For successful responses, the Log could be simply added as part of the existing transaction before commiting and releasing the connection as shown with pseudocode, refering to the implementation of the Successful and unsuccessful responses.
+
+\begin{verbatim}
+    async returnSuccessWithCommit<T>(
+           controllerSuccessfulResponse: T,
+           queryRunner: QueryRunner,
+           processLog: Log
+       ): Promise<{ success: true; res: T }> {
+           // Save processLog to database
+           await queryRunner.commitTransaction();
+           await queryRunner.release();
+           return { success: true, res: controllerSuccessfulResponse };
+       }
+\end{verbatim}
+
+In the other hand, for unsuccessful responses the rollback should be done before adding anything extra to the trasnaction.  Once the trasnaction is rollbacked, the connection is still active, hence, normal statments can be executed which will be immediately applied.
+
+\begin{verbatim}
+    async returnErrorWithRollback(
+           controllerError: ControllerError,
+           queryRunner: QueryRunner.
+           processLog: Log
+       ): Promise<{ success: false; error: ControllerError }> {
+           await queryRunner.rollbackTransaction();
+           // Save processLog to database
+           await queryRunner.release();
+           return { success: false, res: controllerError };
+       }
+    \end{verbatim}
 
 \section{Manual implementation of automation}
+
+\section{Security through implementation of existing IAM Module}

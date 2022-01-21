@@ -7,11 +7,11 @@
 \contentsline {figure}{\numberline {3.2}{\ignorespaces Balance Update Types}}{16}{}%
 \contentsline {figure}{\numberline {3.3}{\ignorespaces Processing a credit's cancelation and its affectation to a store's balance system}}{17}{}%
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {4.1}{\ignorespaces . Dispersion Service REST API Headers}}{21}{}%
-\contentsline {figure}{\numberline {4.2}{\ignorespaces Balance Updates State Machine}}{23}{}%
-\contentsline {figure}{\numberline {4.3}{\ignorespaces Processing internal status of Balance Updates and Bank Transfer for Liquidated payment orders}}{23}{}%
-\contentsline {figure}{\numberline {4.4}{\ignorespaces Processing internal status of Balance Updates and Bank Transfer for Cancelled payment orders}}{24}{}%
-\contentsline {figure}{\numberline {4.5}{\ignorespaces Processing internal status of Balance Updates and Bank Transfer for Returned payment orders. Note the similarity with the Cancelation process}}{26}{}%
-\contentsline {figure}{\numberline {4.6}{\ignorespaces Process for overriding a previously confirmed Balance Update of type Disbursement}}{27}{}%
+\contentsline {figure}{\numberline {4.1}{\ignorespaces . Dispersion Service REST API Headers}}{22}{}%
+\contentsline {figure}{\numberline {4.2}{\ignorespaces Balance Updates State Machine}}{24}{}%
+\contentsline {figure}{\numberline {4.3}{\ignorespaces Processing internal status of Balance Updates and Bank Transfer for Liquidated payment orders}}{24}{}%
+\contentsline {figure}{\numberline {4.4}{\ignorespaces Processing internal status of Balance Updates and Bank Transfer for Cancelled payment orders}}{25}{}%
+\contentsline {figure}{\numberline {4.5}{\ignorespaces Processing internal status of Balance Updates and Bank Transfer for Returned payment orders. Note the similarity with the Cancelation process}}{27}{}%
+\contentsline {figure}{\numberline {4.6}{\ignorespaces Process for overriding a previously confirmed Balance Update of type Disbursement}}{28}{}%
 \addvspace {10\p@ }
 \addvspace {10\p@ }
