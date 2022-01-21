@@ -27,7 +27,7 @@
 \contentsline {subsubsection}{Returning a successful Controller Response, handling the Commit and Release of the Query Runner's Transaction}{19}{}%
 \contentsline {subsubsection}{Returning an unsuccessful Controller Response, handling the Rollback and Release of the Query Runner's Transaction}{19}{}%
 \contentsline {section}{\numberline {3.3}Detailed visibility and traceability of full process}{19}{}%
-\contentsline {section}{\numberline {3.4}Manual implementation of automation}{20}{}%
+\contentsline {section}{\numberline {3.4}Manual implementation of System's Triggers}{20}{}%
 \contentsline {section}{\numberline {3.5}Security through implementation of existing IAM Module}{20}{}%
 \contentsline {chapter}{\numberline {4}Access to the Digital Mexican Banking System}{21}{}%
 \contentsline {section}{\numberline {4.1}General Overview}{21}{}%

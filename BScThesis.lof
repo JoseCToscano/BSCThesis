@@ -6,6 +6,7 @@
 \contentsline {figure}{\numberline {3.1}{\ignorespaces Balance Update UML}}{16}{}%
 \contentsline {figure}{\numberline {3.2}{\ignorespaces Balance Update Types}}{16}{}%
 \contentsline {figure}{\numberline {3.3}{\ignorespaces Processing a credit's cancelation and its affectation to a store's balance system}}{17}{}%
+\contentsline {figure}{\numberline {3.4}{\ignorespaces Balance System Triggers}}{20}{}%
 \addvspace {10\p@ }
 \contentsline {figure}{\numberline {4.1}{\ignorespaces . Dispersion Service REST API Headers}}{22}{}%
 \contentsline {figure}{\numberline {4.2}{\ignorespaces Balance Updates State Machine}}{24}{}%

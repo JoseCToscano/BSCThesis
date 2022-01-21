@@ -203,6 +203,26 @@ In the other hand, for unsuccessful responses the rollback should be done before
        }
     \end{verbatim}
 
-\section{Manual implementation of automation}
+\section{Manual implementation of System's Triggers}
+
+\begin{figure}[ht]
+    \caption{Balance System Triggers}\label{fig:balance_system_triggers}
+    \begin{tabularx}{0.9\textwidth} { 
+    | >{\centering\arraybackslash}X 
+    | >{\centering\arraybackslash}X 
+    | >{\raggedright\arraybackslash}X | }
+   \hline
+   Event & Trigger & Description \\
+   \hline
+   \textit{Bank Transfer generation trigger} & Through Cron Job monitoring every store's disbursement type & Generates new Bank Transfer object with current's store balance [PENDIENTE]   \\
+   \hline
+   STP status update: \textit{Liquidated} & Through incoming activity in STP's webhook & Starts the confirmation process of a Bank Transfer   \\
+   \hline
+   STP status update: \textit{Cancelled} & Through incoming activity in STP's webhook & Starts the cancelation process of a Bank Transfer   \\
+   \hline
+   STP status update: \textit{Returned} & Through incoming activity in STP's webhook & Starts the rejection process of a Bank Transfer   \\
+   \hline
+\end{tabularx}
+\end{figure}
 
 \section{Security through implementation of existing IAM Module}
