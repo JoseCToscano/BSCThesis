@@ -8,13 +8,16 @@
 \contentsline {figure}{\numberline {3.3}{\ignorespaces Process for overriding a previously confirmed Balance Update of type Disbursement}}{18}{}%
 \contentsline {figure}{\numberline {3.4}{\ignorespaces Processing a credit's cancelation and its affectation to a store's balance system}}{19}{}%
 \contentsline {figure}{\numberline {3.5}{\ignorespaces Bank Transfer UML}}{20}{}%
-\contentsline {figure}{\numberline {3.6}{\ignorespaces Balance System Triggers}}{23}{}%
-\contentsline {figure}{\numberline {3.7}{\ignorespaces General integration of a Store's Balance System's triggers and internal processes}}{24}{}%
+\contentsline {figure}{\numberline {3.6}{\ignorespaces Bank Transfers generating trigger}}{21}{}%
+\contentsline {figure}{\numberline {3.7}{\ignorespaces Balance Updates State Machine related to changes in their related Bank Transfers}}{21}{}%
+\contentsline {figure}{\numberline {3.8}{\ignorespaces Balance System Triggers}}{25}{}%
+\contentsline {figure}{\numberline {3.9}{\ignorespaces General integration of a Store's Balance System's triggers and internal processes}}{26}{}%
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {4.1}{\ignorespaces . Dispersion Service REST API Headers}}{26}{}%
-\contentsline {figure}{\numberline {4.2}{\ignorespaces Balance Updates State Machine}}{28}{}%
-\contentsline {figure}{\numberline {4.3}{\ignorespaces Processing internal status of Balance Updates and Bank Transfer for Liquidated payment orders}}{28}{}%
-\contentsline {figure}{\numberline {4.4}{\ignorespaces Processing internal status of Balance Updates and Bank Transfer for Cancelled payment orders}}{29}{}%
-\contentsline {figure}{\numberline {4.5}{\ignorespaces Processing internal status of Balance Updates and Bank Transfer for Returned payment orders. Note the similarity with the Cancelation process}}{31}{}%
+\contentsline {figure}{\numberline {4.1}{\ignorespaces . Dispersion Service REST API Headers}}{28}{}%
+\contentsline {figure}{\numberline {4.2}{\ignorespaces Balance}}{28}{}%
+\contentsline {figure}{\numberline {4.3}{\ignorespaces Balance Updates State Machine}}{30}{}%
+\contentsline {figure}{\numberline {4.4}{\ignorespaces Processing internal status of Balance Updates and Bank Transfer for Liquidated payment orders}}{31}{}%
+\contentsline {figure}{\numberline {4.5}{\ignorespaces Processing internal status of Balance Updates and Bank Transfer for Cancelled payment orders}}{31}{}%
+\contentsline {figure}{\numberline {4.6}{\ignorespaces Processing internal status of Balance Updates and Bank Transfer for Returned payment orders. Note the similarity with the Cancelation process}}{33}{}%
 \addvspace {10\p@ }
 \addvspace {10\p@ }

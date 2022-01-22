@@ -109,11 +109,27 @@ Just as the Balance Updates, as shown in Figure \ref{fig:uml_bank_transfers},eve
 
 \subsection{Generating Bank Transfer objects}
 
-Once the trigger for generating a new Bank Transfer is received, the store's current balance will be used as the Bank Trasfer's amount. As shown in Figure ref{}, All the Balance Updates with status \textit{Pending} will be related to the new Bank Transfer and will then update their status to \textit{In transit}. An additional confirmation could be added at this point for those stores where the Bank Transfers must be confirmed manually by the Treasury team. If this confirmation is not necessary, then a new paymenr order can be generated and sent through STP using the information of the Bank Transfer. This process will be furtherly described in Chapter 4. Once the Bank Transfer has been succesfully sent as a payment order, then a new Balance Update of type \textit{Disbursement} will be generated to appropiately update the store's balance and the credits related to any of the Balance Updates from this Bank Transfer can now be flagged as \textit{disbursed}.\\
+Once the trigger for generating a new Bank Transfer is received, the store's current balance will be used as the Bank Trasfer's amount. As shown in Figure \ref{fig:bank_Transfer_trigger}, All the Balance Updates with status \textit{Pending} will be related to the new Bank Transfer and will then update their status to \textit{In transit}. An additional confirmation could be added at this point for those stores where the Bank Transfers must be confirmed manually by the Treasury team. If this confirmation is not necessary, then a new paymenr order can be generated and sent through STP using the information of the Bank Transfer. This process will be furtherly described in Chapter 4. Once the Bank Transfer has been succesfully sent as a payment order, then a new Balance Update of type \textit{Disbursement} will be generated to appropiately update the store's balance and the credits related to any of the Balance Updates from this Bank Transfer can now be flagged as \textit{disbursed}.\\
+
+\begin{figure} [H]
+    \centering
+    \includegraphics[scale = 0.4]{assets/flowcharts/BankTransferTrigger.png}
+    \caption{Bank Transfers generating trigger}\label{fig:bank_Transfer_trigger}
+\end{figure}
+
+The process of actually sending the payment order through STP will be furtherly described in Chapter 4.\\
+
+Since a Bank Transfer is generated composed of multiple Balance Updates, then their status updates are directly related. Figure \ref{fig:bu_state_machine} describes how the status of any Balance Update could change depending on how the Bank Transfer's status changes.
+
+\begin{figure} [H]
+    \centering
+    \includegraphics[scale = 0.6]{assets/diagrams/BUStateMachine.png}
+    \caption{Balance Updates State Machine related to changes in their related Bank Transfers}\label{fig:bu_state_machine}
+\end{figure}
 
 \section{Ensure correct functionality and error handling through MySQL Transactions}
 
-The MySQL Database service, powered by Oracle, provides a safe update functionality called Transactions. These transactions enable running a group of statements, commonly used for inserting or updating data, with the possibility to discard all changes if required. This behaviour could be particularly usefeul when performing a large amount of updates or inserts within a large process. If any command fails for whatever reason, then all the previous updates should be rollbacked, resulting in a complete failed process instead of a partial failed process. Either every update is executed as expected or none of them are. The general structure of a MySQL Transaction is displayed in the following code snippet available from Oracle's official MySQL Reference Manual [1]
+As noted in the diagrams exposed in previous sections, a particullar service from MySQL, called Transactions, is implemented for updating and inserting new entities to the databes. This database service, powered by Oracle, refers to a safe update functionality. These transactions enable running a group of statements, commonly used for inserting or updating data, with the possibility to discard all changes if required. This behaviour could be particularly usefeul when performing a large amount of updates or inserts within a large process. If any command fails for whatever reason, then all the previous updates should be rollbacked, resulting in a complete failed process instead of a partial failed process. Either every update is executed as expected or none of them are. The general structure of a MySQL Transaction is displayed in the following code snippet available from Oracle's official MySQL Reference Manual [1]
 
 \begin{center}
     \begin{verbatim}

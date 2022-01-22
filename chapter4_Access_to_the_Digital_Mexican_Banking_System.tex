@@ -28,7 +28,7 @@ The consumption of the Dispersion service is given through a REST API request to
     \caption{. Dispersion Service REST API Headers}\label{fig:STPRequestParams}
 \end{figure}
 
-The specific interface required for the request is described in Interfaces 1 and includes all the necessary banking data for a payment order to be processed.\\
+The specific interface required for the request must include all the necessary banking data for a payment order to be processed.[3]\\
 
 Any bad request should be handled accordingly in Atrato’s server, but when the request is done correctly STP can respond with the following interface:
 
@@ -38,7 +38,15 @@ Any bad request should be handled accordingly in Atrato’s server, but when the
     }
 \end{verbatim}
   
-The field id can be interpreted differently depending on its length. According to STP’s documentation, any number greater tan 3 digits refers to the internal reference to the newly generated payment order; if the id is lower or equal to 3 digits, then it serves as an error code which should be consulted in STP’s errors catalog. Whenever the data received refers to an error, the field errorDescription will include additional details regarding the specific response, otherwise, it will not be included in the response.
+The field id can be interpreted differently depending on its length. According to STP’s documentation, any number greater tan 3 digits refers to the internal reference to the newly generated payment order; if the id is lower or equal to 3 digits, then it serves as an error code which should be consulted in STP’s errors catalog. Whenever the data received refers to an error, the field errorDescription will include additional details regarding the specific response, otherwise, it will not be included in the response.\\
+
+This service will be consumed when the balance system's trigger succesfully generates a Bank Transfer and the dispatch is either automatically triggered or manually confirmed. The system will then proceed to generate a payment order and send it through STP. The specific processes required after STP has confirmed thar the payment order was successfully generated are described in Figure \ref{fig:stp_send_payment_order}.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[scale = 0.3]{assets/flowcharts/STP_Send_Payment_Order.png}
+    \caption{Balance}\label{fig:stp_send_payment_order}
+\end{figure}
 
 \section{Webhooks for Bank Transfers Status Updates}
 
@@ -93,7 +101,7 @@ switch (statusUpdate) {
 
 The status of a Bank Transfer cannot deliberately change from one status to another one. There must be specific events or actions that trigger a specific change form one status to another one. These triggers are described in Figure \ref{fig:state_machine_bank_transfers}. Note how a Bank Transfer with status Waiting for confirmation can only be updated either Cancelled or to the status In transit by sending a new payment order through STP. Both states Cancelled and Rejected can be considered as final states, but the state Applied could still be furtherly updated to Rejected. Once a Bank Transfer is Applied, its state could be considered as a final state, but the rare possibility of the money being returned at some point still exists, even months after the confirmation. For this reason, there is an additional trigger that needs to be considered to update a Bank Transfer’s status from Applied to Rejected; this will be furtherly explained below.
 
-\begin{figure}[h!]
+\begin{figure}[H]
     \centering
     \includegraphics[scale = 0.5]{assets/diagrams/BankTransfersStateMachine.png}
     \caption{Balance Updates State Machine}\label{fig:state_machine_bank_transfers}
