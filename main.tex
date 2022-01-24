@@ -11,20 +11,17 @@
 \setcounter{tocdepth}{3}
 \renewcommand{\figurename}{Figure}
 \renewcommand{\listfigurename}{List of Figures}
-
+% MORE PACKAGES HERE 
 \usepackage{graphicx}
 \usepackage{booktabs}
-\usepackage{natbib}
+% \usepackage{natbib}
 \usepackage{xcolor}
 \usepackage{helvet}
 \usepackage{float}
 \usepackage{tabularx}
 
-
-% \addbibresource{sample.bib} %Import the bibliography file
-
-
-% %MORE PACKAGES HERE 
+\usepackage{biblatex} %Imports biblatex package
+\addbibresource{references.bib} %Import the bibliography file
 
 \begin{document}
 
@@ -74,7 +71,7 @@
 % %%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % %%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-|\include{chapter1_introduction.tex}
+\include{chapter1_introduction.tex}
 
 \include{chapter2_general_overview.tex}
 
@@ -90,9 +87,8 @@
 % %%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % % REFERENCES
 % %%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\bibliographystyle{IEEEtran}
-\bibliography{references}
-\addcontentsline{toc}{part}{Bibliography}
+
+\printbibliography %Prints bibliography
 
 % %%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % % APPENDICES
@@ -102,12 +98,5 @@
 % \cleardoublepage
 % % \addtocontents{toc}{\bigskip}
 % \addcontentsline{toc}{part}{Appendices}
-
-% %% OPTIONAL - Max 10-15 pages in total
-
-% \chapter{Appendix title}
-
-% \chapter{Another Appendix}
-
 
 \end{document}

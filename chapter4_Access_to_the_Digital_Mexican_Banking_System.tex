@@ -2,7 +2,7 @@
 
 \section{General Overview}
 
-The Bank of Mexico regulates every transaction between different banking accounts in Mexico. To be able to gain access to their digital banking system Atrato partnered with another Mexican fintech, STP. STP stands for Payments and Transfers System in spanish, and they are part of the System of Interbank Electronic Payments (SPEI®) authorized by The Bank of Mexico. The technological services they are providing will be key to successfully make electronic transfers as part of the automation of the money disbursement process. [1](Pending Reference to SPEI)\\
+The Bank of Mexico regulates every transaction between different banking accounts in Mexico. To be able to gain access to their digital banking system Atrato partnered with another Mexican fintech, STP. STP stands for Payments and Transfers System in spanish, and they are part of the System of Interbank Electronic Payments (SPEI®) authorized by The Bank of Mexico. The technological services they are providing will be key to successfully make electronic transfers as part of the automation of the money disbursement process. \cite{spei}\\
 
 The technological architecture that STP is providing Atrato offers a continuous access to SPEI with the necessary safety measures and ready for scalability. This schema has the possibility to operate in real time to enable a very flexible schedule for the sending of online payments.\\
 
@@ -28,7 +28,7 @@ The consumption of the Dispersion service is given through a REST API request to
     \caption{. Dispersion Service REST API Headers}\label{fig:STPRequestParams}
 \end{figure}
 
-The specific interface required for the request must include all the necessary banking data for a payment order to be processed.[3]\\
+The specific interface required for the request must include all the necessary banking data for a payment order to be processed \cite{stp}.\\
 
 Any bad request should be handled accordingly in Atrato’s server, but when the request is done correctly STP can respond with the following interface:
 

@@ -1,62 +1,18 @@
-This is BibTeX, Version 0.99d (TeX Live 2021)
-Capacity: max_strings=200000, hash_size=200000, hash_prime=170003
-The top-level auxiliary file: main.aux
-A level-1 auxiliary file: chapter1_introduction.aux
-A level-1 auxiliary file: chapter2_general_overview.aux
-A level-1 auxiliary file: chapter3_development_of_balance_system.aux
-A level-1 auxiliary file: chapter4_Access_to_the_Digital_Mexican_Banking_System.aux
-A level-1 auxiliary file: chapter5_Progressive_deployment_of_Balance_System.aux
-A level-1 auxiliary file: chapter6_Discission_and_Conclusions.aux
-The style file: IEEEtran.bst
-Reallocated singl_function (elt_size=4) to 100 items from 50.
-Reallocated singl_function (elt_size=4) to 100 items from 50.
-Reallocated singl_function (elt_size=4) to 100 items from 50.
-Reallocated wiz_functions (elt_size=4) to 6000 items from 3000.
-Reallocated singl_function (elt_size=4) to 100 items from 50.
-Database file #1: references.bib
--- IEEEtran.bst version 1.14 (2015/08/26) by Michael Shell.
--- http://www.michaelshell.org/tex/ieeetran/bibtex/
--- See the "IEEEtran_bst_HOWTO.pdf" manual for usage information.
-
-Done.
-You've used 1 entry,
-            4087 wiz_defined-function locations,
-            834 strings with 7597 characters,
-and the built_in function-call counts, 961 in all, are:
-= -- 77
-> -- 12
-< -- 11
-+ -- 8
-- -- 1
-* -- 59
-:= -- 161
-add.period$ -- 2
-call.type$ -- 1
-change.case$ -- 1
-chr.to.int$ -- 24
-cite$ -- 1
-duplicate$ -- 59
-empty$ -- 61
-format.name$ -- 1
-if$ -- 202
-int.to.chr$ -- 0
-int.to.str$ -- 1
-missing$ -- 8
-newline$ -- 26
-num.names$ -- 1
-pop$ -- 11
-preamble$ -- 1
-purify$ -- 0
-quote$ -- 2
-skip$ -- 69
-stack$ -- 0
-substring$ -- 57
-swap$ -- 55
-text.length$ -- 3
-text.prefix$ -- 0
-top$ -- 5
-type$ -- 1
-warning$ -- 0
-while$ -- 5
-width$ -- 2
-write$ -- 33
+[0] Config.pm:311> INFO - This is Biber 2.16
+[0] Config.pm:314> INFO - Logfile is 'main.blg'
+[89] biber-darwin:340> INFO - === Mon Jan 24, 2022, 13:43:16
+[103] Biber.pm:415> INFO - Reading 'main.bcf'
+[196] Biber.pm:952> INFO - Found 6 citekeys in bib section 0
+[209] Biber.pm:4340> INFO - Processing section 0
+[219] Biber.pm:4531> INFO - Looking for bibtex format file 'references.bib' for section 0
+[220] bibtex.pm:1689> INFO - LaTeX decoding ...
+[225] bibtex.pm:1494> INFO - Found BibTeX data source 'references.bib'
+[238] Utils.pm:395> WARN - I didn't find a database entry for 'einstein' (section 0)
+[238] Utils.pm:395> WARN - I didn't find a database entry for 'dirac' (section 0)
+[248] UCollate.pm:68> INFO - Overriding locale 'en-US' defaults 'normalization = NFD' with 'normalization = prenormalized'
+[248] UCollate.pm:68> INFO - Overriding locale 'en-US' defaults 'variable = shifted' with 'variable = non-ignorable'
+[248] Biber.pm:4168> INFO - Sorting list 'nty/global//global/global' of type 'entry' with template 'nty' and locale 'en-US'
+[248] Biber.pm:4174> INFO - No sort tailoring available for locale 'en-US'
+[256] bbl.pm:654> INFO - Writing 'main.bbl' with encoding 'UTF-8'
+[257] bbl.pm:757> INFO - Output to main.bbl
+[257] Biber.pm:128> INFO - WARNINGS: 2

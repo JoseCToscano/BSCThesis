@@ -144,7 +144,7 @@ Note how once a Balance Update is updated to the status \textit{Applied}, then i
 
 \section{Ensure correct functionality and error handling through MySQL Transactions}
 
-As noted in the diagrams exposed in previous sections, a particullar service from MySQL, called Transactions, is implemented for updating and inserting new entities to the databes. This database service, powered by Oracle, refers to a safe update functionality. These transactions enable running a group of statements, commonly used for inserting or updating data, with the possibility to discard all changes if required. This behaviour could be particularly usefeul when performing a large amount of updates or inserts within a large process. If any command fails for whatever reason, then all the previous updates should be rollbacked, resulting in a complete failed process instead of a partial failed process. Either every update is executed as expected or none of them are. The general structure of a MySQL Transaction is displayed in the following code snippet available from Oracle's official MySQL Reference Manual [1]
+As noted in the diagrams exposed in previous sections, a particullar service from MySQL, called Transactions, is implemented for updating and inserting new entities to the databes. This database service, powered by Oracle, refers to a safe update functionality. These transactions enable running a group of statements, commonly used for inserting or updating data, with the possibility to discard all changes if required. This behaviour could be particularly usefeul when performing a large amount of updates or inserts within a large process. If any command fails for whatever reason, then all the previous updates should be rollbacked, resulting in a complete failed process instead of a partial failed process. Either every update is executed as expected or none of them are. The general structure of a MySQL Transaction is displayed in the following code snippet available from Oracle's official MySQL Reference Manual \cite{mysqldocs}
 
 \begin{center}
     \begin{verbatim}
@@ -155,9 +155,9 @@ As noted in the diagrams exposed in previous sections, a particullar service fro
     \end{verbatim}
 \end{center}
 
-Every transaction must start with the command \textit{START TRANSACTION}. Every following statement will run within the scope of the Transaction. Changes to the tables in the databse will not be made permanent immediately, since they must either commited or rollbacked. The \textit{COMMIT} statment will save the changes to disk while the \textit{ROLLBACK} command will ignore them. [1]\\
+Every transaction must start with the command \textit{START TRANSACTION}. Every following statement will run within the scope of the Transaction. Changes to the tables in the databse will not be made permanent immediately, since they must either commited or rollbacked. The \textit{COMMIT} statment will save the changes to disk while the \textit{ROLLBACK} command will ignore them. \cite{mysqldocs}\\
 
-To enhance this funcionality and to make it compatible to the ORM Atrato is handling, a single connection must be assured will executing any transaction. TypeORM supports Transactions through the implementation of QueryRunners, specifically to create and control state of single database connection. A single QueryRunner instance must be created to handle a single Transaction.[2]\\ 
+To enhance this funcionality and to make it compatible to the ORM Atrato is handling, a single connection must be assured will executing any transaction. TypeORM supports Transactions through the implementation of QueryRunners, specifically to create and control state of single database connection. A single QueryRunner instance must be created to handle a single Transaction.\cite{typeorm}\\ 
 
 To instantiate a QueryRunner from TypeORM first the connection should be fetched. Once the QueryRunner is created and successfully created the single database connection, then the Transaction can be started. This process can be executed as follows:
 
@@ -168,7 +168,7 @@ To instantiate a QueryRunner from TypeORM first the connection should be fetched
     await queryRunner.startTransaction();
 \end{verbatim}
 
-Once the transaction has been started within the scope of the QueryRunner, the correct Commit or Rollback should be handled appropiately. Once the transaction has been succesfully terminated, the Query Runner can be released.[2]
+Once the transaction has been started within the scope of the QueryRunner, the correct Commit or Rollback should be handled appropiately. Once the transaction has been succesfully terminated, the Query Runner can be released.\cite{typeorm}
 
 \begin{verbatim}
     // Only one of the following methods should be executed before releasing
