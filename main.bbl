@@ -110,8 +110,6 @@
       \keyw{transaction,commit,rollback,query runner,connection}
     \endentry
   \enddatalist
-  \missing{dirac}
-  \missing{einstein}
 \endrefsection
 \endinput
 

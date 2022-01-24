@@ -1,18 +1,15 @@
 [0] Config.pm:311> INFO - This is Biber 2.16
 [0] Config.pm:314> INFO - Logfile is 'main.blg'
-[89] biber-darwin:340> INFO - === Mon Jan 24, 2022, 13:43:16
-[103] Biber.pm:415> INFO - Reading 'main.bcf'
-[196] Biber.pm:952> INFO - Found 6 citekeys in bib section 0
-[209] Biber.pm:4340> INFO - Processing section 0
-[219] Biber.pm:4531> INFO - Looking for bibtex format file 'references.bib' for section 0
-[220] bibtex.pm:1689> INFO - LaTeX decoding ...
-[225] bibtex.pm:1494> INFO - Found BibTeX data source 'references.bib'
-[238] Utils.pm:395> WARN - I didn't find a database entry for 'einstein' (section 0)
-[238] Utils.pm:395> WARN - I didn't find a database entry for 'dirac' (section 0)
-[248] UCollate.pm:68> INFO - Overriding locale 'en-US' defaults 'normalization = NFD' with 'normalization = prenormalized'
-[248] UCollate.pm:68> INFO - Overriding locale 'en-US' defaults 'variable = shifted' with 'variable = non-ignorable'
-[248] Biber.pm:4168> INFO - Sorting list 'nty/global//global/global' of type 'entry' with template 'nty' and locale 'en-US'
-[248] Biber.pm:4174> INFO - No sort tailoring available for locale 'en-US'
-[256] bbl.pm:654> INFO - Writing 'main.bbl' with encoding 'UTF-8'
-[257] bbl.pm:757> INFO - Output to main.bbl
-[257] Biber.pm:128> INFO - WARNINGS: 2
+[97] biber-darwin:340> INFO - === Mon Jan 24, 2022, 13:47:06
+[139] Biber.pm:415> INFO - Reading 'main.bcf'
+[238] Biber.pm:952> INFO - Found 4 citekeys in bib section 0
+[252] Biber.pm:4340> INFO - Processing section 0
+[264] Biber.pm:4531> INFO - Looking for bibtex format file 'references.bib' for section 0
+[265] bibtex.pm:1689> INFO - LaTeX decoding ...
+[269] bibtex.pm:1494> INFO - Found BibTeX data source 'references.bib'
+[293] UCollate.pm:68> INFO - Overriding locale 'en-US' defaults 'variable = shifted' with 'variable = non-ignorable'
+[293] UCollate.pm:68> INFO - Overriding locale 'en-US' defaults 'normalization = NFD' with 'normalization = prenormalized'
+[293] Biber.pm:4168> INFO - Sorting list 'nty/global//global/global' of type 'entry' with template 'nty' and locale 'en-US'
+[293] Biber.pm:4174> INFO - No sort tailoring available for locale 'en-US'
+[303] bbl.pm:654> INFO - Writing 'main.bbl' with encoding 'UTF-8'
+[305] bbl.pm:757> INFO - Output to main.bbl
