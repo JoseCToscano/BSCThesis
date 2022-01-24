@@ -9,9 +9,10 @@
 \contentsline {figure}{\numberline {3.4}{\ignorespaces Processing a credit's cancelation and its affectation to a store's balance system}}{19}{}%
 \contentsline {figure}{\numberline {3.5}{\ignorespaces Bank Transfer UML}}{20}{}%
 \contentsline {figure}{\numberline {3.6}{\ignorespaces Bank Transfers generating trigger}}{21}{}%
-\contentsline {figure}{\numberline {3.7}{\ignorespaces Balance Updates State Machine related to changes in their related Bank Transfers}}{21}{}%
-\contentsline {figure}{\numberline {3.8}{\ignorespaces Balance System Triggers}}{25}{}%
-\contentsline {figure}{\numberline {3.9}{\ignorespaces General integration of a Store's Balance System's triggers and internal processes}}{26}{}%
+\contentsline {figure}{\numberline {3.7}{\ignorespaces Status Record UML for both Balance Updates and Bank Transfers}}{21}{}%
+\contentsline {figure}{\numberline {3.8}{\ignorespaces Balance Updates State Machine related to changes in their related Bank Transfers}}{22}{}%
+\contentsline {figure}{\numberline {3.9}{\ignorespaces Balance System Triggers}}{25}{}%
+\contentsline {figure}{\numberline {3.10}{\ignorespaces General integration of a Store's Balance System's triggers and internal processes}}{26}{}%
 \addvspace {10\p@ }
 \contentsline {figure}{\numberline {4.1}{\ignorespaces . Dispersion Service REST API Headers}}{28}{}%
 \contentsline {figure}{\numberline {4.2}{\ignorespaces Balance}}{28}{}%

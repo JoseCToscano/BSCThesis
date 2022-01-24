@@ -1,10 +1,10 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2021) (preloaded format=pdflatex 2022.1.19)  22 JAN 2022 16:15
+This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2021) (preloaded format=pdflatex 2022.1.19)  24 JAN 2022 13:17
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
  %&-line parsing enabled.
-**/Users/josetoscano/Documents/BSCThesis/BScThesis.tex
-(/Users/josetoscano/Documents/BSCThesis/BScThesis.tex
+**/Users/josetoscano/Documents/BSCThesis/main.tex
+(/Users/josetoscano/Documents/BSCThesis/main.tex
 LaTeX2e <2020-10-01> patch level 4
 L3 programming layer <2021-02-18> (/usr/local/texlive/2021/texmf-dist/tex/latex/base/report.cls
 Document Class: report 2020/04/10 v1.4m Standard LaTeX document class
@@ -143,23 +143,23 @@ Package: array 2020/10/01 v2.5c Tabular extension package (FMi)
 File: l3backend-pdftex.def 2021-03-18 L3 backend support: PDF output (pdfTeX)
 \l__color_backend_stack_int=\count198
 \l__pdf_internal_box=\box52
-) (/Users/josetoscano/Documents/BSCThesis/BScThesis.aux (/Users/josetoscano/Documents/BSCThesis/chapter1_introduction.aux) (/Users/josetoscano/Documents/BSCThesis/chapter2_general_overview.aux) (/Users/josetoscano/Documents/BSCThesis/chapter3_development_of_balance_system.aux) (/Users/josetoscano/Documents/BSCThesis/chapter4_Access_to_the_Digital_Mexican_Banking_System.aux) (/Users/josetoscano/Documents/BSCThesis/chapter5_Progressive_deployment_of_Balance_System.aux) (/Users/josetoscano/Documents/BSCThesis/chapter6_Discission_and_Conclusions.aux))
-\openout1 = `BScThesis.aux'.
+) (/Users/josetoscano/Documents/BSCThesis/main.aux (/Users/josetoscano/Documents/BSCThesis/chapter1_introduction.aux) (/Users/josetoscano/Documents/BSCThesis/chapter2_general_overview.aux) (/Users/josetoscano/Documents/BSCThesis/chapter3_development_of_balance_system.aux) (/Users/josetoscano/Documents/BSCThesis/chapter4_Access_to_the_Digital_Mexican_Banking_System.aux) (/Users/josetoscano/Documents/BSCThesis/chapter5_Progressive_deployment_of_Balance_System.aux) (/Users/josetoscano/Documents/BSCThesis/chapter6_Discission_and_Conclusions.aux))
+\openout1 = `main.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 25.
-LaTeX Font Info:    ... okay on input line 25.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 25.
-LaTeX Font Info:    ... okay on input line 25.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 25.
-LaTeX Font Info:    ... okay on input line 25.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 25.
-LaTeX Font Info:    ... okay on input line 25.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 25.
-LaTeX Font Info:    ... okay on input line 25.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 25.
-LaTeX Font Info:    ... okay on input line 25.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 25.
-LaTeX Font Info:    ... okay on input line 25.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 29.
+LaTeX Font Info:    ... okay on input line 29.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 29.
+LaTeX Font Info:    ... okay on input line 29.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 29.
+LaTeX Font Info:    ... okay on input line 29.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 29.
+LaTeX Font Info:    ... okay on input line 29.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 29.
+LaTeX Font Info:    ... okay on input line 29.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 29.
+LaTeX Font Info:    ... okay on input line 29.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 29.
+LaTeX Font Info:    ... okay on input line 29.
 
 *geometry* driver: auto-detecting
 *geometry* detected driver: pdftex
@@ -269,18 +269,18 @@ Underfull \hbox (badness 10000) in paragraph at lines 7--11
 
 ]) [3
 
-] (/Users/josetoscano/Documents/BSCThesis/BScThesis.toc
+] (/Users/josetoscano/Documents/BSCThesis/main.toc
 LaTeX Font Info:    External font `cmex10' loaded for size
 (Font)              <7> on input line 3.
  [4
 
 ])
 \tf@toc=\write3
-\openout3 = `BScThesis.toc'.
+\openout3 = `main.toc'.
 
- [5] (/Users/josetoscano/Documents/BSCThesis/BScThesis.lof)
+ [5] (/Users/josetoscano/Documents/BSCThesis/main.lof)
 \tf@lof=\write4
-\openout4 = `BScThesis.lof'.
+\openout4 = `main.lof'.
 
  [6
 
@@ -315,7 +315,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 19--20
  []
 
 )
-Underfull \hbox (badness 10000) in paragraph at lines 21--73
+Underfull \hbox (badness 10000) in paragraph at lines 21--77
 
  []
 
@@ -499,65 +499,71 @@ File: assets/flowcharts/CreditCancelation.png Graphic file (type png)
 <use assets/flowcharts/CreditCancelation.png>
 Package pdftex.def Info: assets/flowcharts/CreditCancelation.png  used on input line 96.
 (pdftex.def)             Requested size: 355.33023pt x 406.52188pt.
-<assets/uml/BankTransfers.png, id=86, 257.96375pt x 273.02pt>
+ [19 </Users/josetoscano/Documents/BSCThesis/assets/flowcharts/CreditCancelation.png>]
+<assets/uml/BankTransfers.png, id=90, 257.96375pt x 273.02pt>
 File: assets/uml/BankTransfers.png Graphic file (type png)
 <use assets/uml/BankTransfers.png>
-Package pdftex.def Info: assets/uml/BankTransfers.png  used on input line 106.
+Package pdftex.def Info: assets/uml/BankTransfers.png  used on input line 107.
 (pdftex.def)             Requested size: 180.57338pt x 191.11269pt.
- [19 </Users/josetoscano/Documents/BSCThesis/assets/flowcharts/CreditCancelation.png>]
-Underfull \hbox (badness 10000) in paragraph at lines 112--113
+
+Underfull \hbox (badness 10000) in paragraph at lines 113--114
 
  []
 
 <assets/flowcharts/BankTransferTrigger.png, id=91, 821.0675pt x 739.76375pt>
 File: assets/flowcharts/BankTransferTrigger.png Graphic file (type png)
 <use assets/flowcharts/BankTransferTrigger.png>
-Package pdftex.def Info: assets/flowcharts/BankTransferTrigger.png  used on input line 116.
+Package pdftex.def Info: assets/flowcharts/BankTransferTrigger.png  used on input line 117.
 (pdftex.def)             Requested size: 328.42119pt x 295.90025pt.
 [20 </Users/josetoscano/Documents/BSCThesis/assets/uml/BankTransfers.png>]
-Underfull \hbox (badness 10000) in paragraph at lines 120--121
+Underfull \hbox (badness 10000) in paragraph at lines 121--122
 
  []
 
-<assets/diagrams/BUStateMachine.png, id=96, 521.95pt x 302.12875pt>
+<assets/uml/StatusRecordUML.png, id=96, 538.01pt x 172.645pt>
+File: assets/uml/StatusRecordUML.png Graphic file (type png)
+<use assets/uml/StatusRecordUML.png>
+Package pdftex.def Info: assets/uml/StatusRecordUML.png  used on input line 130.
+(pdftex.def)             Requested size: 322.80849pt x 103.58778pt.
+<assets/diagrams/BUStateMachine.png, id=97, 521.95pt x 302.12875pt>
 File: assets/diagrams/BUStateMachine.png Graphic file (type png)
 <use assets/diagrams/BUStateMachine.png>
-Package pdftex.def Info: assets/diagrams/BUStateMachine.png  used on input line 126.
+Package pdftex.def Info: assets/diagrams/BUStateMachine.png  used on input line 138.
 (pdftex.def)             Requested size: 313.17241pt x 181.27864pt.
-
-Overfull \hbox (7.472pt too wide) in paragraph at lines 130--130
+[21 </Users/josetoscano/Documents/BSCThesis/assets/flowcharts/BankTransferTrigger.png> </Users/josetoscano/Documents/BSCThesis/assets/uml/StatusRecordUML.png>]
+Overfull \hbox (7.472pt too wide) in paragraph at lines 145--145
 |[]\OT1/cmr/bx/n/14.4 Ensure cor-rect func-tion-al-ity and er-ror han-dling through
  []
 
-[21 </Users/josetoscano/Documents/BSCThesis/assets/flowcharts/BankTransferTrigger.png> </Users/josetoscano/Documents/BSCThesis/assets/diagrams/BUStateMachine.png>]
-Underfull \hbox (badness 10000) in paragraph at lines 143--144
+
+Underfull \hbox (badness 10000) in paragraph at lines 158--159
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 145--146
+Underfull \hbox (badness 10000) in paragraph at lines 160--161
 
  []
 
-
-Underfull \hbox (badness 10000) in paragraph at lines 167--168
-
- []
-
-[22]
-Underfull \hbox (badness 10000) in paragraph at lines 208--209
+[22 </Users/josetoscano/Documents/BSCThesis/assets/diagrams/BUStateMachine.png>]
+Underfull \hbox (badness 10000) in paragraph at lines 182--183
 
  []
 
-[23] [24]
-Underfull \hbox (badness 10000) in paragraph at lines 273--274
+[23]
+Underfull \hbox (badness 10000) in paragraph at lines 223--224
 
  []
 
-<assets/diagrams/BalanceSystemDiagram.drawio.png, id=112, 719.68875pt x 512.91624pt>
+[24]
+Underfull \hbox (badness 10000) in paragraph at lines 288--289
+
+ []
+
+<assets/diagrams/BalanceSystemDiagram.drawio.png, id=114, 719.68875pt x 512.91624pt>
 File: assets/diagrams/BalanceSystemDiagram.drawio.png Graphic file (type png)
 <use assets/diagrams/BalanceSystemDiagram.drawio.png>
-Package pdftex.def Info: assets/diagrams/BalanceSystemDiagram.drawio.png  used on input line 279.
+Package pdftex.def Info: assets/diagrams/BalanceSystemDiagram.drawio.png  used on input line 294.
 (pdftex.def)             Requested size: 359.84349pt x 256.45749pt.
 ) [25] [26 </Users/josetoscano/Documents/BSCThesis/assets/diagrams/BalanceSystemDiagram.drawio.png>]
 \openout2 = `chapter4_Access_to_the_Digital_Mexican_Banking_System.aux'.
@@ -589,7 +595,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 17--18
 
  []
 
-<assets/diagrams/STPRequestParams.png, id=120, 165.61874pt x 91.34125pt>
+<assets/diagrams/STPRequestParams.png, id=122, 165.61874pt x 91.34125pt>
 File: assets/diagrams/STPRequestParams.png Graphic file (type png)
 <use assets/diagrams/STPRequestParams.png>
 Package pdftex.def Info: assets/diagrams/STPRequestParams.png  used on input line 27.
@@ -612,7 +618,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 41--42
 
  []
 
-<assets/flowcharts/STP_Send_Payment_Order.png, id=124, 1311.90125pt x 402.50375pt>
+<assets/flowcharts/STP_Send_Payment_Order.png, id=126, 1311.90125pt x 402.50375pt>
 File: assets/flowcharts/STP_Send_Payment_Order.png Graphic file (type png)
 <use assets/flowcharts/STP_Send_Payment_Order.png>
 Package pdftex.def Info: assets/flowcharts/STP_Send_Payment_Order.png  used on input line 47.
@@ -663,7 +669,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 71--72
  []
 
 [29]
-<assets/diagrams/BankTransfersStateMachine.png, id=133, 629.35126pt x 402.50375pt>
+<assets/diagrams/BankTransfersStateMachine.png, id=135, 629.35126pt x 402.50375pt>
 File: assets/diagrams/BankTransfersStateMachine.png Graphic file (type png)
 <use assets/diagrams/BankTransfersStateMachine.png>
 Package pdftex.def Info: assets/diagrams/BankTransfersStateMachine.png  used on input line 106.
@@ -673,7 +679,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 112--113
 
  []
 
-<assets/diagrams/LiquidatedStatusUpdate.png, id=134, 769.87625pt x 593.21625pt>
+<assets/diagrams/LiquidatedStatusUpdate.png, id=136, 769.87625pt x 593.21625pt>
 File: assets/diagrams/LiquidatedStatusUpdate.png Graphic file (type png)
 <use assets/diagrams/LiquidatedStatusUpdate.png>
 Package pdftex.def Info: assets/diagrams/LiquidatedStatusUpdate.png  used on input line 118.
@@ -687,7 +693,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 124--125
  []
 
 [30 </Users/josetoscano/Documents/BSCThesis/assets/diagrams/BankTransfersStateMachine.png>]
-<assets/diagrams/CancelledStatusUpdate.png, id=140, 723.70375pt x 528.97626pt>
+<assets/diagrams/CancelledStatusUpdate.png, id=142, 723.70375pt x 528.97626pt>
 File: assets/diagrams/CancelledStatusUpdate.png Graphic file (type png)
 <use assets/diagrams/CancelledStatusUpdate.png>
 Package pdftex.def Info: assets/diagrams/CancelledStatusUpdate.png  used on input line 130.
@@ -707,7 +713,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 140--141
 
  []
 
-<assets/diagrams/ReturnedStatusUpdate.png, id=146, 1071.00125pt x 2058.69125pt>
+<assets/diagrams/ReturnedStatusUpdate.png, id=148, 1071.00125pt x 2058.69125pt>
 File: assets/diagrams/ReturnedStatusUpdate.png Graphic file (type png)
 <use assets/diagrams/ReturnedStatusUpdate.png>
 Package pdftex.def Info: assets/diagrams/ReturnedStatusUpdate.png  used on input line 146.
@@ -743,25 +749,58 @@ Overfull \hbox (10.11382pt too wide) in paragraph at lines 1--1
 
  (/Users/josetoscano/Documents/BSCThesis/chapter6_Discission_and_Conclusions.tex
 Chapter 6.
+
+Package natbib Warning: Citation `einstein' on page 35 undefined on input line 8.
+
 ) [35
 
 
 
 
-] (/Users/josetoscano/Documents/BSCThesis/BScThesis.aux (/Users/josetoscano/Documents/BSCThesis/chapter1_introduction.aux) (/Users/josetoscano/Documents/BSCThesis/chapter2_general_overview.aux) (/Users/josetoscano/Documents/BSCThesis/chapter3_development_of_balance_system.aux) (/Users/josetoscano/Documents/BSCThesis/chapter4_Access_to_the_Digital_Mexican_Banking_System.aux) (/Users/josetoscano/Documents/BSCThesis/chapter5_Progressive_deployment_of_Balance_System.aux) (/Users/josetoscano/Documents/BSCThesis/chapter6_Discission_and_Conclusions.aux)) ) 
+] (/Users/josetoscano/Documents/BSCThesis/main.bbl)
+
+Package natbib Warning: There were undefined citations.
+
+[36
+
+
+
+] (/Users/josetoscano/Documents/BSCThesis/main.aux (/Users/josetoscano/Documents/BSCThesis/chapter1_introduction.aux) (/Users/josetoscano/Documents/BSCThesis/chapter2_general_overview.aux) (/Users/josetoscano/Documents/BSCThesis/chapter3_development_of_balance_system.aux) (/Users/josetoscano/Documents/BSCThesis/chapter4_Access_to_the_Digital_Mexican_Banking_System.aux) (/Users/josetoscano/Documents/BSCThesis/chapter5_Progressive_deployment_of_Balance_System.aux) (/Users/josetoscano/Documents/BSCThesis/chapter6_Discission_and_Conclusions.aux)
+
+Package natbib Warning: Citation(s) may have changed.
+(natbib)                Rerun to get citations correct.
+
+
+/Users/josetoscano/Documents/BSCThesis/main.aux:12: Package natbib Error: Bibliography not compatible with author-year citations.
+(natbib)                Press <return> to continue in numerical citation style.
+
+See the natbib package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.12 ...mand\NAT@force@numbers{}\NAT@force@numbers
+                                                  
+Check the bibliography entries for non-compliant syntax,
+or select author-year BibTeX style, e.g. plainnat
+
+)
+
+LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
+
+ ) 
 Here is how much of TeX's memory you used:
- 3351 strings out of 478994
- 52486 string characters out of 5858184
- 362447 words of memory out of 5000000
- 20741 multiletter control sequences out of 15000+600000
+ 3373 strings out of 478994
+ 52916 string characters out of 5858184
+ 362450 words of memory out of 5000000
+ 20759 multiletter control sequences out of 15000+600000
  410951 words of font info for 48 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 68i,11n,74p,1131b,281s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 68i,11n,74p,1126b,281s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/local/texlive/2021/texmf-dist/fonts/enc/dvips/cm-super/cm-super-ts1.enc}{/usr/local/texlive/2021/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/local/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmbxti10.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/public/cm-super/sfrm1000.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/urw/helvetic/uhvr8a.pfb>
-Output written on /Users/josetoscano/Documents/BSCThesis/BScThesis.pdf (36 pages, 833626 bytes).
+Output written on /Users/josetoscano/Documents/BSCThesis/main.pdf (37 pages, 843737 bytes).
 PDF statistics:
- 196 PDF objects out of 1000 (max. 8388607)
- 113 compressed objects within 2 object streams
+ 204 PDF objects out of 1000 (max. 8388607)
+ 118 compressed objects within 2 object streams
  0 named destinations out of 1000 (max. 500000)
- 86 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 91 words of extra memory for PDF output out of 10000 (max. 10000000)
 

@@ -25,11 +25,12 @@
 \contentsline {subsubsection}{Overwriting Balance Updates}{18}{}%
 \contentsline {section}{\numberline {3.2}Bank Transfers}{19}{}%
 \contentsline {subsection}{\numberline {3.2.1}Generating Bank Transfer objects}{20}{}%
+\contentsline {subsubsection}{Status updates records}{21}{}%
 \contentsline {section}{\numberline {3.3}Ensure correct functionality and error handling through MySQL Transactions}{22}{}%
 \contentsline {subsubsection}{Returning a successful Controller Response, handling the Commit and Release of the Query Runner's Transaction}{23}{}%
 \contentsline {subsubsection}{Returning an unsuccessful Controller Response, handling the Rollback and Release of the Query Runner's Transaction}{23}{}%
-\contentsline {section}{\numberline {3.4}Detailed visibility and traceability of full process}{23}{}%
-\contentsline {section}{\numberline {3.5}Balance System Integration}{24}{}%
+\contentsline {section}{\numberline {3.4}Detailed visibility and traceability of full process}{24}{}%
+\contentsline {section}{\numberline {3.5}Balance System Integration}{25}{}%
 \contentsline {chapter}{\numberline {4}Access to the Digital Mexican Banking System}{27}{}%
 \contentsline {section}{\numberline {4.1}General Overview}{27}{}%
 \contentsline {section}{\numberline {4.2}Requirements}{27}{}%
@@ -46,3 +47,4 @@
 \contentsline {section}{\numberline {6.1}Discussion}{35}{}%
 \contentsline {section}{\numberline {6.2}Conclusion}{35}{}%
 \contentsline {section}{\numberline {6.3}Further Work}{35}{}%
+\contentsline {part}{Bibliography}{36}{}%

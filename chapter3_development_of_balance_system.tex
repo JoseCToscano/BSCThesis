@@ -99,7 +99,8 @@ Furthermore, Balance Updates of type Contribution could also be overwritten at s
 
 \section{Bank Transfers}
 
-Just as the Balance Updates, as shown in Figure \ref{fig:uml_bank_transfers},every Bank Transfer will have their primary key \textit{id}, useful for any foreign key relationship, and a not nullable \textit{storeId}. The attribute \textit{status} will internally describe wether the Bank Transfer has already been sent, confirmed, cancelled or rejected, while the attribute \textit{stpStatus} will be the value received upon any incoming update regarding the payment order related to this Bank Transfer. The status of the Bank Transfers will be furtherly discissed in Chapter 4. The \textit{dispersionDate} will indiacte the date when the Bank Transfer was dispatched as a payment order. This dispatch could be either done automatically or through a manual confirmation, hence, it will no necesarily be the same as the \textit{creationDate}. Furthermore, the \textit{trackingKey} will be the attribute used to link the Bank Transfers objects and the payment orders from STP.
+Just as the Balance Updates, as shown in Figure \ref{fig:uml_bank_transfers}, every Bank Transfer will have their primary key \textit{id}, useful for any foreign key relationship, and a not nullable \textit{storeId}. The attribute \textit{status} will internally describe wether the Bank Transfer has already been sent, confirmed, cancelled or rejected, while the attribute \textit{stpStatus} will be the value received upon any incoming update regarding the payment order related to this Bank Transfer. The status of the Bank Transfers can not be arbitrarily updated from one status to another one, the specific expected behavoiour will be furtherly discissed in Chapter 4.
+The \textit{dispersionDate} will indiacte the date when the Bank Transfer was dispatched as a payment order. This dispatch could be either done automatically or through a manual confirmation, hence, it will no necesarily be the same as the \textit{creationDate}. Furthermore, the \textit{trackingKey} will be the attribute used to link the Bank Transfers objects and the payment orders from STP.
 
 \begin{figure} [H]
     \centering
@@ -109,7 +110,7 @@ Just as the Balance Updates, as shown in Figure \ref{fig:uml_bank_transfers},eve
 
 \subsection{Generating Bank Transfer objects}
 
-Once the trigger for generating a new Bank Transfer is received, the store's current balance will be used as the Bank Trasfer's amount. As shown in Figure \ref{fig:bank_Transfer_trigger}, All the Balance Updates with status \textit{Pending} will be related to the new Bank Transfer and will then update their status to \textit{In transit}. An additional confirmation could be added at this point for those stores where the Bank Transfers must be confirmed manually by the Treasury team. If this confirmation is not necessary, then a new paymenr order can be generated and sent through STP using the information of the Bank Transfer. This process will be furtherly described in Chapter 4. Once the Bank Transfer has been succesfully sent as a payment order, then a new Balance Update of type \textit{Disbursement} will be generated to appropiately update the store's balance and the credits related to any of the Balance Updates from this Bank Transfer can now be flagged as \textit{disbursed}.\\
+Once the trigger for generating a new Bank Transfer is received, the store's current balance will be used as the Bank Trasfer's amount. As shown in Figure \ref{fig:bank_Transfer_trigger}, all the Balance Updates with status \textit{Pending} will be related to the new Bank Transfer and will then update their status to \textit{In transit}. An additional confirmation could be added at this point for those stores where the Bank Transfers must be confirmed manually by the Treasury team. If this confirmation is not necessary, then a new paymenr order can be generated and sent through STP using the information of the Bank Transfer. This process will be furtherly described in Chapter 4. Once the Bank Transfer has been succesfully sent as a payment order, then a new Balance Update of type \textit{Disbursement} will be generated to appropiately update the store's balance and the credits related to any of the Balance Updates from this Bank Transfer can now be flagged as \textit{disbursed}.\\
 
 \begin{figure} [H]
     \centering
@@ -119,13 +120,27 @@ Once the trigger for generating a new Bank Transfer is received, the store's cur
 
 The process of actually sending the payment order through STP will be furtherly described in Chapter 4.\\
 
-Since a Bank Transfer is generated composed of multiple Balance Updates, then their status updates are directly related. Figure \ref{fig:bu_state_machine} describes how the status of any Balance Update could change depending on how the Bank Transfer's status changes.
+\subsubsection{Status updates records}
+
+Every time that the internal status of a Balance Update or a Bank Transfer is updated a record will be generated to keep track of every update. As shown in previously shown diagrams, these records will be stored in the entities Bank Transfer Status Update Record and Balance Update Status Record respectively. Even though the status entities are equal in sturcture, they will be handled independently, for this reason the status updates records are handled independently as well.
+These status records will simply keep track of the next status of any Balance Udpdate or Bank Transfer, as shown in Figure \ref{fig:status_record_uml} the creation date of the record will indicate the moment where the status was updated. For new instances of Balance Updates or Bank Transfers, a status record will be created with the initial status. 
+
+\begin{figure} [H]
+    \centering
+    \includegraphics[scale = 0.6]{assets/uml/StatusRecordUML.png}
+    \caption{Status Record UML for both Balance Updates and Bank Transfers}\label{fig:status_record_uml}
+\end{figure}
+
+Since a Bank Transfer is composed of multiple Balance Updates, then their status updates are directly related. Figure \ref{fig:bu_state_machine} describes how the status of any Balance Update could change depending on how the Bank Transfer's status changes. 
 
 \begin{figure} [H]
     \centering
     \includegraphics[scale = 0.6]{assets/diagrams/BUStateMachine.png}
     \caption{Balance Updates State Machine related to changes in their related Bank Transfers}\label{fig:bu_state_machine}
 \end{figure}
+
+Note how once a Balance Update is updated to the status \textit{Applied}, then it can not be updated furtherly; this is a final status. Any additional update regarding any confirmed Balance Update should be represented as a \textit{Cancelation}, Disbursement \textit{Cancelation} or \textit{Manual adjustment}, but the Balance Updated that was already applied will not produce any additional change in the store's balance.
+
 
 \section{Ensure correct functionality and error handling through MySQL Transactions}
 
