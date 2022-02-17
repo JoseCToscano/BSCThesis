@@ -1,11 +1,11 @@
 # Fdb version 3
-["biber main"] 1643028424 "main.bcf" "main.bbl" "main" 1643028430
+["biber main"] 1643028424 "main.bcf" "main.bbl" "main" 1644422855
   "main.bcf" 1643028430 107150 6c1a7a0eaa4cbda43de7c37b08b19a9a "pdflatex"
   "references.bib" 1643028171 689 8cdf3f3576e6b35c8ec07c94153870ed ""
   (generated)
-  "main.bbl"
   "main.blg"
-["pdflatex"] 1643028428 "/Users/josetoscano/Documents/BSCThesis/main.tex" "/Users/josetoscano/Documents/BSCThesis/main.pdf" "main" 1643028430
+  "main.bbl"
+["pdflatex"] 1643028428 "/Users/josetoscano/Documents/BSCThesis/main.tex" "/Users/josetoscano/Documents/BSCThesis/main.pdf" "main" 1644422855
   "/Users/josetoscano/Documents/BSCThesis/main.aux" 1643028430 1550 75d49f3a9bea1f0971b513c58da4630d ""
   "/Users/josetoscano/Documents/BSCThesis/main.tex" 1643028280 2346 2ad5d5ef88725e4baa5d09a478833b97 ""
   "/usr/local/texlive/2021/texmf-dist/fonts/enc/dvips/base/8r.enc" 1165713224 4850 80dc9bab7f31fb78a000ccfed0e27cab ""
@@ -122,7 +122,7 @@
   "chapter5_Progressive_deployment_of_Balance_System.aux" 1643028430 4411 8f424823045ecd8e053d050c0e2b96bf "pdflatex"
   "chapter5_Progressive_deployment_of_Balance_System.tex" 1643026775 125 84a83ab6b836efdd57aba46573bfd848 ""
   "chapter6_Discission_and_Conclusions.aux" 1643028430 4508 f578aaaf90e4706e1abe02e287a405a2 "pdflatex"
-  "chapter6_Discission_and_Conclusions.tex" 1643028422 106 066f6109d1261c05b4de6e2533d974e7 ""
+  "chapter6_Discission_and_Conclusions.tex" 1644422854 106 066f6109d1261c05b4de6e2533d974e7 ""
   "cover.tex" 1643026775 1480 14b739f3dc6fcf0fc103752da917cece ""
   "main.aux" 1643028430 1550 75d49f3a9bea1f0971b513c58da4630d "pdflatex"
   "main.bbl" 1643028426 4223 ba607bd3a361c451ca6f021c4204c056 "biber main"
@@ -133,18 +133,18 @@
   "preamble.tex" 1643026775 1144 17289741000b4c0bfbfdd677d6b93c9c ""
   "quote.tex" 1643026775 376 5208ff2bd3e3f47539dd200eabd4e877 ""
   (generated)
-  "/Users/josetoscano/Documents/BSCThesis/main.log"
+  "chapter3_development_of_balance_system.aux"
+  "main.aux"
+  "main.toc"
+  "chapter6_Discission_and_Conclusions.aux"
+  "chapter2_general_overview.aux"
+  "main.pdf"
   "chapter1_introduction.aux"
-  "chapter5_Progressive_deployment_of_Balance_System.aux"
+  "main.bcf"
+  "/Users/josetoscano/Documents/BSCThesis/main.log"
   "main.run.xml"
   "main.log"
-  "chapter6_Discission_and_Conclusions.aux"
-  "/Users/josetoscano/Documents/BSCThesis/main.pdf"
-  "chapter3_development_of_balance_system.aux"
-  "main.bcf"
-  "chapter2_general_overview.aux"
-  "main.aux"
-  "main.lof"
-  "main.pdf"
   "chapter4_Access_to_the_Digital_Mexican_Banking_System.aux"
-  "main.toc"
+  "main.lof"
+  "/Users/josetoscano/Documents/BSCThesis/main.pdf"
+  "chapter5_Progressive_deployment_of_Balance_System.aux"
