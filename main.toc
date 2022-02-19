@@ -94,6 +94,6 @@
 \defcounter {refsection}{0}\relax 
 \contentsline {chapter}{\numberline {6}Discussion and Conclusions}{35}{}%
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {6.1}Conclusion}{35}{}%
+\contentsline {section}{\numberline {6.1}Conclusion}{36}{}%
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {6.2}Further Work}{35}{}%
+\contentsline {section}{\numberline {6.2}Further Work}{36}{}%

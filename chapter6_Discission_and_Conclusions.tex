@@ -1,15 +1,26 @@
 
 \chapter{Discussion and Conclusions}
 
-With the Balance Updates structure, keeping track of how a store's balance changes over time became a simple task. Every new credit contribution, cancelation, disbursment or manual update is directly reflected on the balance. However, managing the grouping of these Balance Updates into Bank Transfers objects was handled with two different approaches:\\
+With the Balance Updates structure, keeping track of how a store's balance changes over time became a simple task. Every new credit contribution, cancelation, disbursement or manual update is directly reflected on the balance. However, managing the grouping of these Balance Updates into Bank Transfers objects was handled with two different approaches:\\
 
-First, the deciding factor on how to groupd them together was the status of each Balance Update. Whenever the Bank Transfer generation was triggered, either by the CRON JOB execution or by the credit contribution for the immediate dispersion modality, the system computed the amount of the Bank Transfer by taking all the Balance Updates wich had a status \textit{Pending} and sum the ammount on each of them
+First, the deciding factor on how to group them together was the status of each Balance Update. Whenever the Bank Transfer generation was triggered, either by the CRON JOB execution or by the credit contribution for the immediate dispersion modality, the system computed the amount of the Bank Transfer by taking all the Balance Updates which had a status \textit{Pending} and sum the amount on each of them.\\ 
 
-• Mencionar sobre los primeros 2 approaches: actualizar por status, cambio a transferencias por el saldo actual
+With this approach, the store's real balance was not directly reflected on the last Balance Update, but must be calculated without considering all those Balance Updates with a Status Different than \textit{Applied}. In this scenario, a Bank Transfer could already been generated and sent through STP, but the changes where not reflected on the store's balance until STP confirmed the correct reception of the money. This always left a floating balance that could be later altered depending on the incoming status updates from STP. If any Bank Transfered was cancelled, then all those balance updates returned to the \textit{Pending} status, and could later be considered for another Bank Transfer. The dinamism in the status of the Banlance Updates could add certain level of complexity when computing how the amount for the Bank Transfer was generated.\\ 
+
+In terms of mapping how the Balance Updates where related to the Bank Transfers the status worked perfectly, but to know the real balance of the store, multiple factors needed to be considered. The last Balance Update could indicate an actual balance of \$0.00, but if any previous Balance Update still had the status \textit{In transit}, then the real balance differed.\\ 
+
+This complexity was not be noted until a real edge-case that was not previously considered happend in production: for any Bank Transfer that was sent through STP a status update was expected. If none was recived, then the Balance Updates that generated that Bank Transfer will always remain with a status \textit{In transit}, and they will always appear as a pending movement for the store. If the bank transfer was cancelled, days after it was sent, then probably more Balance Updates and even Bank Transfers would have already been created by the time of the cancelation. If this was the case, then by the event of the next trigger for the Bank Transfer generation, all those previously generated Balance Updates would merge with the most recent ones to compose a new Bank Transfer. This was exactly the expected behaviour; to include in any new Bank Transfer all those Updates that where still pending with the objetive of leaving no pending Updates at all. As stated before, the status where very helpful to relate Balance Updates and Bank Transfers correctly, but the amount for the Bank Transfer could be complicated to decompose.
+
+This complexity in the amount for every bank transfer led to the second approach: keep the mapping of Balance Updates and Bank Transfers through their status, but consider always the store's actual balance for any new Bank Transfer. Unlike the first alternative, the Balance Update of type \textit{Disbursement} was immediately generated once the Bank Transfer was sent, instead of waiting for the confirmation. With this approach, now every time the store's actual balance is considered for a Bank Transfer, then the \textit{Disbursement} Balance Update is immediately generated, bringing the store's balance back to \textit{\$0.00}.\\ 
+
+
+Additionally, if any of the Bank Transfers that where sent was later cancelled, a new Balance Update should be generated to compensate the changes in the store's balance already made by the \textit{Disbursement} Balance Update. This changes enabled a much clearer understanding and breakdown of the store's balance in relation with every Bank Transfer that was sent. A cancelation of a Bank Transfer was very easy to understand, unlike with the previous appoach, where a cancelation would only bring back the status of the Balance Updates to \textit{pending}, and later assign them to a new Bank Transfer.\\ 
+
+The change in the approach to this much simpler and undestandable algorithm was mainly triggered by some unexpected behaviour in STP's integration. The edge-case where no status update was received was never considered, and since its some responsibility of a third party then these actions rely outside of our area of control. 
 
 
 
-• Explicar cómo se complicó el pedo de la transferencia de STP que nunca llegó
+
 • Explicar lo complicado que puede ser depender de third-parties
 • Explicar importancia de poder saber qué pasó en todo momento (logger)
 • Reto: cancelar después de confirmar?
@@ -26,3 +37,5 @@ First, the deciding factor on how to groupd them together was the status of each
 \section{Further Work}
 
 • Más integraciones con servicios de STP
+• Implemenatacion de logging system para otros modulos de la aplicacion
+• Ver la manera de manejar los sistemas de saldos a partir de comercios y no solo por sucrusales
