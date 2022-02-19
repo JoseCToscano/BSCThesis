@@ -1,8 +1,28 @@
 
 \chapter{Discussion and Conclusions}
 
-\section{Discussion}
+With the Balance Updates structure, keeping track of how a store's balance changes over time became a simple task. Every new credit contribution, cancelation, disbursment or manual update is directly reflected on the balance. However, managing the grouping of these Balance Updates into Bank Transfers objects was handled with two different approaches:\\
+
+First, the deciding factor on how to groupd them together was the status of each Balance Update. Whenever the Bank Transfer generation was triggered, either by the CRON JOB execution or by the credit contribution for the immediate dispersion modality, the system computed the amount of the Bank Transfer by taking all the Balance Updates wich had a status \textit{Pending} and sum the ammount on each of them 
+
+• Mencionar sobre los primeros 2 approaches: actualizar por status, cambio a transferencias por el saldo actual
+
+
+
+• Explicar cómo se complicó el pedo de la transferencia de STP que nunca llegó
+• Explicar lo complicado que puede ser depender de third-parties
+• Explicar importancia de poder saber qué pasó en todo momento (logger)
+• Reto: cancelar después de confirmar?
+
+
 
 \section{Conclusion}
 
+• Explicar la importancia de tener bien mapeados los procesos que se van a automatizar
+• Explicar la importancia del diseño para el mantenimiento
+• Ley de murphy, si algo puede salir mal, planear para ver cómo se puede resolver
+• Resultado: explicar como sí se logró todo el pedo
+
 \section{Further Work}
+
+• Más integraciones con servicios de STP

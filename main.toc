@@ -66,6 +66,8 @@
 \defcounter {refsection}{0}\relax 
 \contentsline {section}{\numberline {3.5}Balance System Integration}{25}{}%
 \defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {3.6}Integration with current business processes}{26}{}%
+\defcounter {refsection}{0}\relax 
 \contentsline {chapter}{\numberline {4}Access to the Digital Mexican Banking System}{27}{}%
 \defcounter {refsection}{0}\relax 
 \contentsline {section}{\numberline {4.1}General Overview}{27}{}%
@@ -86,14 +88,12 @@
 \defcounter {refsection}{0}\relax 
 \contentsline {chapter}{\numberline {5}Progressive deployment of Balance System}{34}{}%
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {5.1}First steps and validation}{34}{}%
+\contentsline {section}{\numberline {5.1}Progressive automation}{34}{}%
 \defcounter {refsection}{0}\relax 
 \contentsline {section}{\numberline {5.2}Deployment to production}{34}{}%
 \defcounter {refsection}{0}\relax 
 \contentsline {chapter}{\numberline {6}Discussion and Conclusions}{35}{}%
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {6.1}Discussion}{35}{}%
+\contentsline {section}{\numberline {6.1}Conclusion}{35}{}%
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {6.2}Conclusion}{35}{}%
-\defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {6.3}Further Work}{35}{}%
+\contentsline {section}{\numberline {6.2}Further Work}{35}{}%

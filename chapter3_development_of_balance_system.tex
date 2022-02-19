@@ -294,3 +294,15 @@ The general integration of these events and triggers is described in Figure \ref
     \includegraphics[scale = 0.5]{assets/diagrams/BalanceSystemDiagram.drawio.png}
     \caption{General integration of a Store's Balance System's triggers and internal processes}\label{fig:balance_systen_diaran}
 \end{figure}
+
+\section{Integration with current business processes}
+
+Since the balance system is part of the general customer pipeline it must be directly integreated with current business processes. Once an application from a customer becomes an active credit, this credit could become part of the automated balance system of a store, depending if this store in particular has the automatic disbursements balance system enabled.\\
+
+Furthermore, an existing credit could be affected through additinoal processes, like a change in the amount, a cancelation of the purchase or even a change of Store. The latter must be particularly addressed, since a credit could change from a store with its automatic system enabled to another one without it, or the other way around. The automation of any store's balance is completely integrated into every process to consider if the store has the system enabled or not before realizing any changes or updates to it. This behaviour is described in a general manner in Figure \ref{fig:automation_validation}, where this validation is included throughout every method of the Balance Updates and Bank Transfers Controllers.
+
+\begin{figure} [H]
+    \centering
+    \includegraphics[scale = 0.5]{assets/flowcharts/AutomationValidation.png}
+    \caption{General validation of Balance Updates and Bank Transfers Controllers' methods}\label{fig:automation_validation}
+\end{figure}

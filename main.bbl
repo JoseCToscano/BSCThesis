@@ -46,6 +46,25 @@
       \endverb
       \keyw{transaction,commit,rollback,mysql}
     \endentry
+    \entry{oracle}{online}{}
+      \name{author}{1}{}{%
+        {{hash=30162ed78b6c10f731411f2fc440c24f}{%
+           family={Oracle},
+           familyi={O\bibinitperiod}}}%
+      }
+      \strng{namehash}{30162ed78b6c10f731411f2fc440c24f}
+      \strng{fullhash}{30162ed78b6c10f731411f2fc440c24f}
+      \strng{bibnamehash}{30162ed78b6c10f731411f2fc440c24f}
+      \strng{authorbibnamehash}{30162ed78b6c10f731411f2fc440c24f}
+      \strng{authornamehash}{30162ed78b6c10f731411f2fc440c24f}
+      \strng{authorfullhash}{30162ed78b6c10f731411f2fc440c24f}
+      \field{sortinit}{O}
+      \field{sortinithash}{2cd7140a07aea5341f9e2771efe90aae}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{Pending}
+      \keyw{spei}
+    \endentry
     \entry{spei}{online}{}
       \name{author}{1}{}{%
         {{hash=d636b2bccc80aafd10f1b343d42eacd7}{%
