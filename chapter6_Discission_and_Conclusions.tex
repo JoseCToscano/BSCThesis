@@ -3,7 +3,7 @@
 
 With the Balance Updates structure, keeping track of how a store's balance changes over time became a simple task. Every new credit contribution, cancelation, disbursment or manual update is directly reflected on the balance. However, managing the grouping of these Balance Updates into Bank Transfers objects was handled with two different approaches:\\
 
-First, the deciding factor on how to groupd them together was the status of each Balance Update. Whenever the Bank Transfer generation was triggered, either by the CRON JOB execution or by the credit contribution for the immediate dispersion modality, the system computed the amount of the Bank Transfer by taking all the Balance Updates wich had a status \textit{Pending} and sum the ammount on each of them 
+First, the deciding factor on how to groupd them together was the status of each Balance Update. Whenever the Bank Transfer generation was triggered, either by the CRON JOB execution or by the credit contribution for the immediate dispersion modality, the system computed the amount of the Bank Transfer by taking all the Balance Updates wich had a status \textit{Pending} and sum the ammount on each of them
 
 • Mencionar sobre los primeros 2 approaches: actualizar por status, cambio a transferencias por el saldo actual
 
