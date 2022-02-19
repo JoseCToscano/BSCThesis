@@ -86,14 +86,14 @@
 \defcounter {refsection}{0}\relax 
 \contentsline {subsection}{\numberline {4.4.4}Returned status update}{31}{}%
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{\numberline {5}Progressive deployment of Balance System}{34}{}%
+\contentsline {chapter}{\numberline {5}Progressive deployment of Balance System}{33}{}%
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {5.1}Progressive automation}{34}{}%
+\contentsline {section}{\numberline {5.1}Progressive automation}{33}{}%
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {5.2}Deployment to production}{34}{}%
+\contentsline {section}{\numberline {5.2}Deployment to production}{33}{}%
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{\numberline {6}Discussion and Conclusions}{35}{}%
+\contentsline {chapter}{\numberline {6}Discussion and Conclusions}{34}{}%
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {6.1}Conclusion}{36}{}%
+\contentsline {section}{\numberline {6.1}Conclusion}{35}{}%
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {6.2}Further Work}{36}{}%
+\contentsline {section}{\numberline {6.2}Further Work}{35}{}%
