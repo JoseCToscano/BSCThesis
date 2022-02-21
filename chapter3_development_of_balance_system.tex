@@ -4,9 +4,9 @@
 
 As discused before, the core elements composing a store's balance system are Balance Updates and Bank Transfers. These elements are constructed as Models, which in terms of OOP are represented by Classes. These Classes' attributes and elements will be handled independently by Models and Controllers Classes. Every action or method regarding the models will be handled by the Controllers.\\
 
-The Controllers will generate instances of the Balance Updates and Bank Transfers models and handle the relationships between them. They will serve as the link between the application and the Database as well by using TypeORM Repositories for these Models.
+The Controllers will generate instances of the Balance Updates and Bank Transfers models and handle the relationships between them. They will serve as the link between the application and the Database as well by using TypeORM Repositories for these Models.\\
 
-These controllers classes handle different actions and processes within them and where designed toin such way that their methods always return a specific interface as their response. This interface is called \textbf{\textit{ControllerResponse}} and it will either be a successful or unsuccessful response. This will be identified with the attribute \textit{success}. For successful responses, the attribute \textit{res} will be included and its type will be described by the generic indicator \textbf{\textit{T}}. In the other hand, for any unsuccessful response, the attribute \textit{error} will be included containg an object in the form of a \textbf{\textit{ControllerError}} as follows:
+These controllers classes handle different actions and processes within them and where designed in such way that their methods always return a specific interface as their response. This interface is called \textbf{\textit{ControllerResponse}} and it will either be a successful or unsuccessful response. This will be identified with the attribute \textit{success}. For successful responses, the attribute \textit{res} will be included and its type will be described by the generic indicator \textbf{\textit{T}}. In the other hand, for any unsuccessful response, the attribute \textit{error} will be included containg an object in the form of a \textbf{\textit{ControllerError}} as follows:
 
     
     \begin{verbatim}
@@ -22,7 +22,7 @@ These controllers classes handle different actions and processes within them and
             };
             \end{verbatim}
             
-A \textbf{\textit{ControllerError}} will contain additional details as a string describing the specific expection making it compatible with Javascript's Error type:
+A \textbf{\textit{ControllerError}} will contain additional details as a string describing the specific exception making it compatible with Javascript's Error type:
             
     \begin{verbatim}
         interface ControllerError {
@@ -33,7 +33,7 @@ A \textbf{\textit{ControllerError}} will contain additional details as a string 
 
     \subsection{Balance Updates}
 
-The System's general balance will be composed by numerous Balance Updates. Where the changes in the balance of the store will be reflected on each of them. As shown in Figure \ref{fig:uml_balance_update}, every instance will have its own \textit{id} as primary key, which will serve as reference for any foreign key relationship. The atribute \textit{amount} indicates exactly how the store's balance will be updated, keeping a record of the store's previous balance and the current balance after the update was added in the respective attributes.
+The system's general balance will be composed by numerous Balance Updates. Where the changes in the balance of the store will be reflected on each of them. As shown in Figure \ref{fig:uml_balance_update}, every instance will have its own \textit{id} as primary key, which will serve as reference for any foreign key relationship. The atribute \textit{amount} indicates exactly how the store's balance will be updated, keeping a record of the store's previous balance and the current balance after the update was added in the corresponding attributes.
 
 \begin{figure} [H]
     \centering
@@ -41,9 +41,9 @@ The System's general balance will be composed by numerous Balance Updates. Where
     \caption{Balance Update UML}\label{fig:uml_balance_update}
 \end{figure}
 
-Every Balance Update must have a \textit{storeId} foreign key, indicating which store's balance it is affecting.\\ 
+Every Balance Update must have a \textit{storeId} foreign key, indicating which store's balance it is affecting. This is how the modularity of the balance system is defined per every individual store.\\ 
 
-The attribute \textit{creditId} will serve as a reference for linking a credit entity to the Balance Update it created when it served as a \textit{Contribution} or \textit{Credit cancelation} to the store's balance. These refere to the types that a Balance Update could have and will be furtherly explained in the following section.\\
+The nullable attribute \textit{creditId} will serve as a reference for linking a Credit entity to the Balance Update it created when it served as a \textit{Contribution} or \textit{Credit cancellation} to the store's balance. These refere to the types that a Balance Update could have and will be furtherly explained in the following section.\\
 
 Some Balance Updates could be manually generated by any administrator with the appropiate permissions. For this scenario, it is important to keep a record of who made these changes by saving this administrator's id in the attribute \textit{adminCreatorId} and label these changes with the respective \textit{type}. 
 
@@ -65,7 +65,7 @@ Every Balance Update will have a specific \textit{type} attribute. These types a
    \hline
    2 & \textit{Disbursement} & Disbursement generated through the confirmation of a Bank Transfer   \\
    \hline
-   3 & \textit{Credit Cancelation} & Loads negative balance due to credit cancelation   \\
+   3 & \textit{Credit Cancellation} & Loads negative balance due to credit cancelation   \\
    \hline
    4 & \textit{Adjustment} & Loads adjustment in balance to be considered in the next Bank Transfer   \\
    \hline
