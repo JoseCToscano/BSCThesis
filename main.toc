@@ -38,9 +38,9 @@
 \defcounter {refsection}{0}\relax 
 \contentsline {subsection}{\numberline {2.4.2}Refactor in partiality selection architecture}{13}{}%
 \defcounter {refsection}{0}\relax 
-\contentsline {subsubsection}{Diferences between Payments Per Store and Payment Options architecture}{13}{}%
+\contentsline {subsubsection}{Diferences between Payments Per Store and Payment Options architecture}{14}{}%
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{\numberline {3}Development of Balance System}{16}{}%
+\contentsline {chapter}{\numberline {3}Development of the Automated Balance System}{16}{}%
 \defcounter {refsection}{0}\relax 
 \contentsline {section}{\numberline {3.1}Development of module through OOP, managing models and controllers}{16}{}%
 \defcounter {refsection}{0}\relax 
