@@ -63,13 +63,13 @@ Every Balance Update will have a specific \textit{type} attribute. These types a
    \hline
    1 & \textit{Contribution} & Contribution to balance due to a new credit   \\
    \hline
-   2 & \textit{Disbursement} & Disbursement generated through the confirmation of a Bank Transfer   \\
+   2 & \textit{Disbursement} & Disbursement generated through the sending of a Bank Transfer   \\
    \hline
    3 & \textit{Credit Cancellation} & Loads negative balance due to credit cancelation   \\
    \hline
    4 & \textit{Adjustment} & Loads adjustment in balance to be considered in the next Bank Transfer   \\
    \hline
-   5 & \textit{Disbursement override} & Overrides the amount addedd to the balance from another Disbursement   \\
+   5 & \textit{Disbursement override} & Overrides the amount added to the balance from another Disbursement   \\
   \hline
 \end{tabularx}
 \end{figure}
@@ -79,7 +79,7 @@ Every Balance Update will have a specific \textit{type} attribute. These types a
 
 Balance Updates have an attribute to indicate if the object was overwritten. Whenever an object is overwritten, this means that there is an additional Balance Update that is cancelling its affectation on the store’s general balance. This is particularly helpful to keep control of a store’s balance modification for those scenarios where there are involved some cancelations, overrides or any manual adjustment. The only Balance Updates that could be overwritten are those of the types of \textit{Disbursement} and \textit{Contribution}.\\
 
-A Balance Update of type \textit{Disbursement} is generated whenever a confirmation that a Bank Transfer has been successfully accepted is received. There are some edge cases where this \textit{Disbursement} Balance Update needs to be overwritten for external reasons; this could happen, for example, due to the cancelation of a Bank Transfer. Furthermore, there is a very rare, but possible, scenario where the money could be returned even after it was confirmed, but the expected outcome is just as that of a cancellation. For these cases, the Disbursement that was generated is no longer valid, hence, an update to the store’s balance should be made. This is done by generating an additional Balance Update with type \textit{Disbursement Override} as shown in Figure \ref{fig:override_disbursement}. This new Balance Update will contribute once again the amount that was previously reduced to the store’s balance.\\
+A Balance Update of type \textit{Disbursement} is generated whenever a Bank Transfer has been successfully sent. There are some edge cases where this \textit{Disbursement} Balance Update needs to be overwritten for external reasons; this could happen, for example, due to the cancellation of the Bank Transfer. Furthermore, there is a very rare, but possible, scenario where the money could be returned even after it was confirmed, but the expected outcome is just as that of a cancellation. For these cases, the Disbursement that was generated is no longer valid, hence, an update to the store’s balance should be made. This is done by generating an additional Balance Update with type \textit{Disbursement Override} as shown in Figure \ref{fig:override_disbursement}. This new Balance Update will contribute once again the amount that was previously reduced to the store’s balance.\\
 
 \begin{figure} [H]
     \centering
@@ -88,18 +88,19 @@ A Balance Update of type \textit{Disbursement} is generated whenever a confirmat
 \end{figure}
 
 
-Furthermore, Balance Updates of type Contribution could also be overwritten at some point. These are created once a partner has confirmed a product’s delivery through their dashboard and the credit of that product will generate a contribution to the store’s balance. This means that there is some amount that Atrato must eventually transfer to the partner’s bank account depending on the disbursement modality that this partner has active. These contributions could eventually be overwritten if the credit is later cancelled. For this particular scenario, a new Balance Update of type \textit{Credit cancelation} needs to be created to compensate the previous contribution, regardless of the contribution’s status as shown in Figure \ref{fig:dlowchart_credit_cancelation}.
+Furthermore, Balance Updates of type \textit{Contribution} could also be overwritten at some point. These are created once a partner has confirmed a product’s delivery through their dashboard causing that the credit of that product will generate a contribution to the store’s balance. This means that there is some amount that Atrato must eventually transfer to the partner’s bank account depending on the disbursement modality that this partner has active. These contributions could eventually be overwritten if the credit is later cancelled. For this particular scenario, a new Balance Update of type \textit{Credit cancelation} needs to be created to compensate the previous contribution, regardless of the contribution’s status as shown in Figure \ref{fig:dlowchart_credit_cancelation}.
 
 
 \begin{figure} [H]
     \centering
-    \includegraphics[scale = 0.6]{assets/flowcharts/CreditCancelation.png}
-    \caption{Processing a credit's cancelation and its affectation to a store's balance system}\label{fig:dlowchart_credit_cancelation}
+    \includegraphics[scale = 0.6]{assets/diagrams/CancelationFlowChart.png}
+    \caption{Processing a credit's cancellation and its affectation to a store's balance system}\label{fig:dlowchart_credit_cancelation}
 \end{figure}
 
 \section{Bank Transfers}
 
-Just as the Balance Updates, as shown in Figure \ref{fig:uml_bank_transfers}, every Bank Transfer will have their primary key \textit{id}, useful for any foreign key relationship, and a not nullable \textit{storeId}. The attribute \textit{status} will internally describe wether the Bank Transfer has already been sent, confirmed, cancelled or rejected, while the attribute \textit{stpStatus} will be the value received upon any incoming update regarding the payment order related to this Bank Transfer. The status of the Bank Transfers can not be arbitrarily updated from one status to another one, the specific expected behavoiour will be furtherly discissed in Chapter 4.
+Just as the Balance Updates, as shown in Figure \ref{fig:uml_bank_transfers}, every Bank Transfer will have their primary key \textit{id}, useful for any foreign key relationship, and a not nullable \textit{storeId}. The attribute \textit{status} will internally describe wether the Bank Transfer has already been sent, confirmed, cancelled or rejected, while the attribute \textit{stpStatus} will be the value received upon any incoming update regarding the payment order related to this Bank Transfer. The status of the Bank Transfers can not be arbitrarily updated from one status to another one, the specific expected behaviour will be furtherly discissed in Chapter 4.\\ 
+
 The \textit{dispersionDate} will indiacte the date when the Bank Transfer was dispatched as a payment order. This dispatch could be either done automatically or through a manual confirmation, hence, it will no necesarily be the same as the \textit{creationDate}. Furthermore, the \textit{trackingKey} will be the attribute used to link the Bank Transfers objects and the payment orders from STP.
 
 \begin{figure} [H]
@@ -110,7 +111,7 @@ The \textit{dispersionDate} will indiacte the date when the Bank Transfer was di
 
 \subsection{Generating Bank Transfer objects}
 
-Once the trigger for generating a new Bank Transfer is received, the store's current balance will be used as the Bank Trasfer's amount. As shown in Figure \ref{fig:bank_Transfer_trigger}, all the Balance Updates with status \textit{Pending} will be related to the new Bank Transfer and will then update their status to \textit{In transit}. An additional confirmation could be added at this point for those stores where the Bank Transfers must be confirmed manually by the Treasury team. If this confirmation is not necessary, then a new paymenr order can be generated and sent through STP using the information of the Bank Transfer. This process will be furtherly described in Chapter 4. Once the Bank Transfer has been succesfully sent as a payment order, then a new Balance Update of type \textit{Disbursement} will be generated to appropiately update the store's balance and the credits related to any of the Balance Updates from this Bank Transfer can now be flagged as \textit{disbursed}.\\
+Once the trigger for generating a new Bank Transfer is received, the store's current balance will be used as the Bank Trasfer's amount. As shown in Figure \ref{fig:bank_Transfer_trigger}, all the Balance Updates with status \textit{Pending} will be related to the new Bank Transfer and will then update their status to \textit{In transit}, nonetheless, the amount for every new Bank Transfer will always be the store's actual balance. An additional confirmation could be added at this point for those stores where the Bank Transfers must be confirmed manually by the Treasury team. If this confirmation is not necessary, then a new paymenr order can be generated and sent through STP using the information of the Bank Transfer. This process will be furtherly described in Chapter 4. Once the Bank Transfer has been succesfully sent as a payment order, then a new Balance Update of type \textit{Disbursement} will be generated to appropiately update the store's balance. Additionally, once STP has successfully confirmed the reception of the Bank Transfer, then the credits related to any of the Balance Updates from this Bank Transfer can now be flagged as \textit{disbursed}.\\
 
 \begin{figure} [H]
     \centering
@@ -122,8 +123,8 @@ The process of actually sending the payment order through STP will be furtherly 
 
 \subsubsection{Status updates records}
 
-Every time that the internal status of a Balance Update or a Bank Transfer is updated a record will be generated to keep track of every update. As shown in previously shown diagrams, these records will be stored in the entities Bank Transfer Status Update Record and Balance Update Status Record respectively. Even though the status entities are equal in sturcture, they will be handled independently, for this reason the status updates records are handled independently as well.
-These status records will simply keep track of the next status of any Balance Udpdate or Bank Transfer, as shown in Figure \ref{fig:status_record_uml} the creation date of the record will indicate the moment where the status was updated. For new instances of Balance Updates or Bank Transfers, a status record will be created with the initial status. 
+Every time that the internal status of a Balance Update or a Bank Transfer is updated a record will be generated to keep track of each of these updates. As shown in previous diagrams, these records will be stored in the entities Bank Transfer Status Update Record and Balance Update Status Record respectively. Even though the status entities are equal in sturcture, they will be handled independently, for this reason the status updates records are handled independently as well.
+These status records will simply keep track of the next status of any Balance Update or Bank Transfer, as shown in Figure \ref{fig:status_record_uml} the creation date of the record will indicate the moment where the status was updated. For new instances of Balance Updates or Bank Transfers, a status record will be created with the initial status. 
 
 \begin{figure} [H]
     \centering
@@ -135,7 +136,7 @@ Since a Bank Transfer is composed of multiple Balance Updates, then their status
 
 \begin{figure} [H]
     \centering
-    \includegraphics[scale = 0.6]{assets/diagrams/BUStateMachine.png}
+    \includegraphics[scale = 0.6]{assets/diagrams/BUStatusStateMachine.png}
     \caption{Balance Updates State Machine related to changes in their related Bank Transfers}\label{fig:bu_state_machine}
 \end{figure}
 
@@ -144,7 +145,7 @@ Note how once a Balance Update is updated to the status \textit{Applied}, then i
 
 \section{Ensure correct functionality and error handling through MySQL Transactions}
 
-As noted in the diagrams exposed in previous sections, a particullar service from MySQL, called Transactions, is implemented for updating and inserting new entities to the databes. This database service, powered by Oracle, refers to a safe update functionality. These transactions enable running a group of statements, commonly used for inserting or updating data, with the possibility to discard all changes if required. This behaviour could be particularly usefeul when performing a large amount of updates or inserts within a large process. If any command fails for whatever reason, then all the previous updates should be rollbacked, resulting in a complete failed process instead of a partial failed process. Either every update is executed as expected or none of them are. The general structure of a MySQL Transaction is displayed in the following code snippet available from Oracle's official MySQL Reference Manual \cite{mysqldocs}
+As noted in the diagrams exposed in previous sections, a particullar service from MySQL, called Transactions, is implemented for updating and inserting new entities to the database. This database service, powered by Oracle, refers to a safe update functionality. These transactions enable running a group of statements, commonly used for inserting or updating data, with the possibility to discard all changes if required. This behaviour could be particularly usefeul when performing a large amount of updates or inserts within a large process. If any command fails for whatever reason, then all the previous updates should be rollbacked, resulting in a complete failed process instead of a partial failed process. Either every update is executed as expected or none of them are. The general structure of a MySQL Transaction is displayed in the following code snippet available from Oracle's official MySQL Reference Manual \cite{mysqldocs}
 
 \begin{center}
     \begin{verbatim}
@@ -157,7 +158,7 @@ As noted in the diagrams exposed in previous sections, a particullar service fro
 
 Every transaction must start with the command \textit{START TRANSACTION}. Every following statement will run within the scope of the Transaction. Changes to the tables in the databse will not be made permanent immediately, since they must either commited or rollbacked. The \textit{COMMIT} statment will save the changes to disk while the \textit{ROLLBACK} command will ignore them. \cite{mysqldocs}\\
 
-To enhance this funcionality and to make it compatible to the ORM Atrato is handling, a single connection must be assured will executing any transaction. TypeORM supports Transactions through the implementation of QueryRunners, specifically to create and control state of single database connection. A single QueryRunner instance must be created to handle a single Transaction.\cite{typeorm}\\ 
+To enhance this funcionality and to make it compatible to the ORM Atrato is handling, a single connection must be assured while executing any transaction. TypeORM supports Transactions through the implementation of QueryRunners, specifically to create and control state of single database connection. A single QueryRunner instance must be created to handle a single Transaction.\cite{typeorm}\\ 
 
 To instantiate a QueryRunner from TypeORM first the connection should be fetched. Once the QueryRunner is created and successfully created the single database connection, then the Transaction can be started. This process can be executed as follows:
 
@@ -179,7 +180,7 @@ Once the transaction has been started within the scope of the QueryRunner, the c
     await queryRunner.release();
 \end{verbatim}
 
-The entire Balance System is composed by different events and triggers that could initiate specific processes where not only BalanceUpdates and BankTransfers, but also some Credit instances must be edited or added to the database. A correct functionality must be ensured and none of these processes should be partially completed. In other words, the creation and dispatch of a Bank Transfer must be donde successfully, with the corresponding state updates and records of these state changes. If an error occurs during any process, then the entities involved should not be edited, nor any additional entity should be created. The error could be later reviewed and the process could be repeated once again, replaced or even discarded. This expected behaviour also applies for handling the creation and update of the BalanceUpdates.\\
+The entire balance system is composed by different events and triggers that could initiate specific processes where not only BalanceUpdates and BankTransfers, but also some Credit instances must be edited or added to the database. A correct functionality must be ensured and none of these processes should be partially completed. In other words, the creation and dispatch of a Bank Transfer must be donde successfully, with the corresponding state updates and records of these state changes. If an error occurs during any process, then the entities involved should not be edited, nor any additional entity should be created. The error could be later reviewed and the process could be repeated once again, replaced or even discarded. This expected behaviour also applies for handling the creation and updates of any Balance Updates and Bank Transfers.\\
 
 QueryRunners will be the base element managing all the updates and inserts within the complete Balance System. To apply correct design patterns and avoid repetition, a base controller class was developed to ensure that every method within the \textit{BankTransfersController} and the \textit{BalanceUpdatesController} could handle QueryRunners appropiately.
 
@@ -220,11 +221,9 @@ The combination of these methods compose the expected \textbf{\textit{Controller
 
 \section{Detailed visibility and traceability of full process}
 
-The process being automated consists of very delicate matters, therefore, there should exist complete traceability of every action that was executed within the whole system. Every error presented during eny process should be able to be traced and identify easily in order ot take actions, as well as any process that was completed successfully. With this objective in mind, the Balance System was connected to an existing internal logging system, where every process interuption or completion is logged in the database with the respective data and payload necesary for identification.\\
+The process being automated consists of very delicate matters, therefore, there should exist complete traceability of every action that was executed within the whole system. Every error presented during any process should be able to be traced and identified easily in order ot take actions, as well as any process that was successfully completed. With this objective in mind, the balance system was connected to an existing internal logging module, where every process interuption or completion is logged in the database with the respective data and payload necesary for identification.\\
 
-Since all actinos regarding the database are hadndled through a QueryRunner, then this logging implementation should also considered these matters. Whenever process is completed and the changes will be commited, the log of this event should be included in the Commit. This applies equally for any action being rollbacked; the changes should e ignored by the trasnaction, but the log of the process should indeed be saved.
-
-The logging system was integrated within the same Base Controller developed for handling Query Runners's transactions as follows:
+Since all actions regarding the database are hadndled through a QueryRunner, then this logging implementation should also consider these matters. Whenever a process is completed and the changes will be commited, the log of this event should be included in the Commit. This applies equally for any action being rollbacked; the changes should be ignored by the trasnaction, but the log of the process should indeed be saved. The logging system was integrated within the same Base Controller developed for handling Query Runners's transactions as follows:\\
 
 For successful responses, the Log could be simply added as part of the existing transaction before commiting and releasing the connection as shown with pseudocode, refering to the implementation of the Successful and unsuccessful responses.
 
@@ -258,7 +257,7 @@ In the other hand, for unsuccessful responses the rollback should be done before
 
 \section{Balance System Integration}
 
-There are different events happening in Atrato's pipeline and business processes that could trigger some specific actions regarding the store's balance. The sytem could be affected either by updating the store's balance by adding new Balance Updates, or by generating bank Transfers objects from the existing Balance Updates. Furthermore, the status of these Bank Transfers could be updated, indicating some specific actions on the system. The existing events and triggers are shown in Figure \ref{fig:balance_system_triggers}.
+There are different events happening in Atrato's pipeline and business processes that could trigger some specific actions regarding the store's balance. The sytem could be affected either by updating the store's balance by adding new Balance Updates, or by generating Bank Transfer objects from the existing Balance Updates. Furthermore, the status of these Bank Transfers could be updated, indicating some specific actions on the system. The existing events and triggers are shown in Figure \ref{fig:balance_system_triggers}.
 
 \begin{figure}[H]
     \caption{Balance System Triggers}\label{fig:balance_system_triggers}
@@ -269,15 +268,15 @@ There are different events happening in Atrato's pipeline and business processes
    \hline
    Event & Trigger & Description \\
    \hline
-   \textit{Bank Transfer generation trigger} & Through Cron Job monitoring every store's disbursement type & Generates new Bank Transfer object with current's store balance [PENDIENTE]   \\
+   \textit{Bank Transfer generation trigger} & Through Cron Job monitoring every store's disbursement type & Generates new Bank Transfer object with current's store balance  \\
    \hline
    \textit{Contribution of new credit} & Notification of the delivery of a credit's product & Generates a Balance Update indicating the contribution to the stoere's balance  \\
    \hline
-   \textit{Cancelation of credit} & Notification of the cancelation of a credit & Generates a Balance Update indicating the cancelation of the credit amount to the stoere's balance  \\
+   \textit{Cancellation of credit} & Notification of the cancellation of a credit & Generates a Balance Update indicating the cancellation of the credit's amount to the store's balance  \\
    \hline
    STP status update: \textit{Liquidated} & Through incoming activity in STP's webhook & Starts the confirmation process of a Bank Transfer   \\
    \hline
-   STP status update: \textit{Cancelled} & Through incoming activity in STP's webhook & Starts the cancelation process of a Bank Transfer   \\
+   STP status update: \textit{Cancelled} & Through incoming activity in STP's webhook & Starts the cancellation process of a Bank Transfer   \\
    \hline
    STP status update: \textit{Returned} & Through incoming activity in STP's webhook & Starts the rejection process of a Bank Transfer   \\
    \hline
@@ -287,7 +286,7 @@ There are different events happening in Atrato's pipeline and business processes
     
 Since most of these triggers happen as a result of automated processes or through actions from third parties, like merchants or STP's servive, to ensure the correct functionality of the balance system, Atrato must have a way of replicating these actions in case something external is not working as expected. Internally, any process executed as part of a web service or exposed endpoint to these third parties can also be executed by any administrator from Atrato with the required permissions.\\
     
-The general integration of these events and triggers is described in Figure \ref{fig:balance_system_triggers}, displaying how the Balance Updates and the Bank Transfers in a Store's Balance System can be generated through distinct actions and how they relate between each other. Note how the only output of the system are the Bank Transfers generated as payment orders for the intrgration with STP's services Furthermore, STP will send updates on these payment ordrers' status and the system will then generate actions accordingly. Specifications on the integration with STP will be furtherly discussed in the following chapter.
+The general integration of these events and triggers is described in Figure \ref{fig:balance_system_triggers}, displaying how the Balance Updates and the Bank Transfers in a Store's Balance System can be generated through distinct actions and how they relate between each other. Note how the only output of the system are the Bank Transfers generated as payment orders for the intergration with STP's services. Furthermore, STP will send updates on these payment orders' status and the system will then generate actions accordingly. Specifications on the integration with STP will be furtherly discussed in the following chapter.
 
 \begin{figure} [H]
     \centering
@@ -299,10 +298,10 @@ The general integration of these events and triggers is described in Figure \ref
 
 Since the balance system is part of the general customer pipeline it must be directly integreated with current business processes. Once an application from a customer becomes an active credit, this credit could become part of the automated balance system of a store, depending if this store in particular has the automatic disbursements balance system enabled.\\
 
-Furthermore, an existing credit could be affected through additinoal processes, like a change in the amount, a cancelation of the purchase or even a change of Store. The latter must be particularly addressed, since a credit could change from a store with its automatic system enabled to another one without it, or the other way around. The automation of any store's balance is completely integrated into every process to consider if the store has the system enabled or not before realizing any changes or updates to it. This behaviour is described in a general manner in Figure \ref{fig:automation_validation}, where this validation is included throughout every method of the Balance Updates and Bank Transfers Controllers.
+Furthermore, an existing credit could be affected through additinoal processes, like a change in the amount, a cancelation of the purchase or even a change of store. The latter must be particularly addressed, since a credit could change from a store with its automatic system enabled to another one without it, or the other way around. The automation of any store's balance is completely integrated into every process to consider if the store has the system enabled or not before realizing any changes or updates to it. This behaviour is described in a general manner in Figure \ref{fig:automation_validation}, where this validation is included throughout every method of the Balance Updates and Bank Transfers Controllers.
 
 \begin{figure} [H]
     \centering
-    \includegraphics[scale = 0.5]{assets/flowcharts/AutomationValidation.png}
+    \includegraphics[scale = 0.5]{assets/diagrams/Validation.png}
     \caption{General validation of Balance Updates and Bank Transfers Controllers' methods}\label{fig:automation_validation}
 \end{figure}
