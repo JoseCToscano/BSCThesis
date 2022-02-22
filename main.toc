@@ -82,9 +82,9 @@
 \defcounter {refsection}{0}\relax 
 \contentsline {subsection}{\numberline {4.4.2}Liquidated status update}{30}{}%
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {4.4.3}Cancelled status update}{30}{}%
+\contentsline {subsection}{\numberline {4.4.3}Cancelled status update}{31}{}%
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {4.4.4}Returned status update}{31}{}%
+\contentsline {subsection}{\numberline {4.4.4}Returned status update}{32}{}%
 \defcounter {refsection}{0}\relax 
 \contentsline {chapter}{\numberline {5}Progressive deployment of Balance System}{33}{}%
 \defcounter {refsection}{0}\relax 
@@ -94,6 +94,6 @@
 \defcounter {refsection}{0}\relax 
 \contentsline {chapter}{\numberline {6}Discussion and Conclusions}{34}{}%
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {6.1}Conclusion}{35}{}%
+\contentsline {section}{\numberline {6.1}Conclusion}{36}{}%
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {6.2}Further Work}{36}{}%
+\contentsline {section}{\numberline {6.2}Further Work}{37}{}%

@@ -36,7 +36,7 @@
 \defcounter {refsection}{0}\relax 
 \contentsline {figure}{\numberline {4.1}{\ignorespaces . Dispersion Service REST API Headers}}{28}{}%
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {4.2}{\ignorespaces Balance}}{28}{}%
+\contentsline {figure}{\numberline {4.2}{\ignorespaces Process of sending a payment order through STP's Dispersion service}}{28}{}%
 \defcounter {refsection}{0}\relax 
 \contentsline {figure}{\numberline {4.3}{\ignorespaces Balance Updates State Machine}}{30}{}%
 \defcounter {refsection}{0}\relax 
@@ -44,8 +44,8 @@
 \defcounter {refsection}{0}\relax 
 \contentsline {figure}{\numberline {4.5}{\ignorespaces Processing internal status of Balance Updates and Bank Transfer for Cancelled payment orders}}{31}{}%
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {4.6}{\ignorespaces Processing internal status of Balance Updates and Bank Transfer for Returned payment orders. Note the similarity with the Cancelation process}}{32}{}%
-\defcounter {refsection}{0}\relax 
 \addvspace {10\p@ }
 \defcounter {refsection}{0}\relax 
 \addvspace {10\p@ }
+\defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {6.1}{\ignorespaces Processing internal status of Balance Updates and Bank Transfer for Returned payment orders. Note the similarity with the Cancellation process}}{35}{}%

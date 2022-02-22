@@ -9,6 +9,24 @@ First, the deciding factor on how to group them together was the status of each 
 
 With this approach, the store's real balance was not directly reflected on the last Balance Update, but should be calculated without considering all those Balance Updates with a Status Different than \textit{Applied}. In this scenario, a Bank Transfer could already been generated and sent through STP, but the changes where not reflected on the store's balance until STP confirmed the correct reception of the money. This always left a floating balance that could be later altered depending on the incoming status updates from STP. If for any reason one of the Bank Transfered was cancelled, then all those balance updates returned to the \textit{Pending} status, and could later be considered for another Bank Transfer. The dinamism in the status of the Banlance Updates could add certain level of complexity when computing how the amount for the Bank Transfer was generated.\\ 
 
+
+//
+If a payment order is returned, the process that the Bank Transfer object will follow depends on its state. If the state is \textit{In transit}, meaning it is a Bank Transfer that was recently sent through a payment order, then the Bank Transfer object related to this order will update its status to \textit{Rejected} and the process regarding to the Balance Updates will be very similar to a cancellation: their status will be updated back to \textit{Pending} so that they can be considered in a new Bank Transfer in the next trigger. Since no additional updates were made to the store’s general balance then no further action is required, just as in a cancellation.\\
+
+Meanwhile, if the status of the Bank Transfer object is already Applied, then additional to the previous process of updating the Balance Updates back to Pending, further actions need to be taken. Moneywise, the Balance Updates that were previously confirmed, but now the money was returned to Atrato’s account, meaning that they should be considered in a new Bank Transfer.\\
+
+For this specific scenario, a new Balance Update of type Disbursement was already generated when the Bank Transfer was previously confirmed, so a new Balance Update of type Disbursement Override needs to be generated to compensate the changes made to the store’s balance. This new Balance Update will directly update the store’s balance; hence, it will automatically have the status of Applied.\\
+
+By updating the previously confirmed Balance Updates back to Pending, they will eventually be considered into a new Bank Transfer.
+
+\begin{figure} [H]
+    \centering
+    \includegraphics[scale = 0.4]{assets/diagrams/ReturnedStatus.png}
+    \caption{Processing internal status of Balance Updates and Bank Transfer for Returned payment orders. Note the similarity with the Cancellation process}\label{fig:returned_status_update}
+\end{figure}
+
+//
+
 In terms of mapping how the Balance Updates where related to the Bank Transfers the status worked perfectly, but to know the real balance of the store, multiple factors needed to be considered. The last Balance Update could indicate an actual balance of \$0.00, but if any previous Balance Update still had the status \textit{In transit}, then the real balance differed.\\ 
 
 This complexity was not noted until a real edge-case, that was not previously considered, happend in production: for any Bank Transfer that was sent through STP a status update was expected. If none was recived, then the Balance Updates that generated that Bank Transfer will always remain with a status \textit{In transit}, and they will always appear as a pending movement for the store. If the bank transfer was cancelled, days after it was sent, then probably more Balance Updates and even Bank Transfers would have already been created by the time of the cancellation. If this was the case, then by the event of the next trigger for the Bank Transfer generation, all those previously generated Balance Updates would merge with the most recent ones to compose a new Bank Transfer, which was exactly the expected behaviour: to include in any new Bank Transfer all those Balance Updates that where still pending with the objetive of leaving none of them pending at all. As stated before, the status were very helpful to relate Balance Updates and Bank Transfers correctly, but the amount for the Bank Transfer could be complicated to decompose.\\

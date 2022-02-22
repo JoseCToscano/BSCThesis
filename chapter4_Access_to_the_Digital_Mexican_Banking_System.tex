@@ -2,7 +2,7 @@
 
 \section{General Overview}
 
-The Bank of Mexico regulates every transaction between different banking accounts in Mexico. To be able to gain access to their digital banking system Atrato partnered with another Mexican fintech, STP. STP stands for Payments and Transfers System in spanish, and they are part of the System of Interbank Electronic Payments (SPEI®) authorized by The Bank of Mexico. The technological services they are providing will be key to successfully make electronic transfers as part of the automation of the money disbursement process. \cite{spei}\\
+The Bank of Mexico regulates every transaction between different banking accounts in Mexico. To be able to gain access to their digital banking system Atrato partnered with another Mexican fintech, STP. STP stands for Payments and Transfers System in spanish, and they are part of the System of Interbank Electronic Payments (SPEI®) authorized by The Bank of Mexico. The technological services they are providing will be key to successfully making electronic transfers as part of the automation of the money disbursement process. \cite{spei}\\
 
 The technological architecture that STP is providing Atrato offers a continuous access to SPEI with the necessary safety measures and ready for scalability. This schema has the possibility to operate in real time to enable a very flexible schedule for the sending of online payments.\\
 
@@ -38,14 +38,14 @@ Any bad request should be handled accordingly in Atrato’s server, but when the
     }
 \end{verbatim}
   
-The field id can be interpreted differently depending on its length. According to STP’s documentation, any number greater tan 3 digits refers to the internal reference to the newly generated payment order; if the id is lower or equal to 3 digits, then it serves as an error code which should be consulted in STP’s errors catalog. Whenever the data received refers to an error, the field errorDescription will include additional details regarding the specific response, otherwise, it will not be included in the response.\\
+The field \textit{id} can be interpreted differently depending on its length. According to STP’s documentation, any number greater tan 3 digits refers to the internal reference to the newly generated payment order; if the \textit{id} is lower or equal to 3 digits, then it serves as an error code which should be consulted in STP’s errors catalog. Whenever the data received refers to an error, the field \textit{errorDescription} will include additional details regarding the specific response, otherwise, it will not be included in the response.\\
 
 This service will be consumed when the balance system's trigger succesfully generates a Bank Transfer and the dispatch is either automatically triggered or manually confirmed. The system will then proceed to generate a payment order and send it through STP. The specific processes required after STP has confirmed thar the payment order was successfully generated are described in Figure \ref{fig:stp_send_payment_order}.
 
 \begin{figure}[H]
     \centering
-    \includegraphics[scale = 0.3]{assets/flowcharts/STP_Send_Payment_Order.png}
-    \caption{Balance}\label{fig:stp_send_payment_order}
+    \includegraphics[scale = 0.3]{assets/diagrams/SendOrder.jpg}
+    \caption{Process of sending a payment order through STP's Dispersion service}\label{fig:stp_send_payment_order}
 \end{figure}
 
 \section{Webhooks for Bank Transfers Status Updates}
@@ -64,7 +64,7 @@ Each of these different status updates will be handled independently. Whenever a
 
 All the processes resultant of any status update will follow the same general structure and implementation as all the balance system. This means, that any error on the process will log everything on the Logs table and since everything is part of a SQL Transaction, no single object involved will be edited nor created due to the Transaction’s Rollback event. Additionally, the internal status of numerous Balance Updates and Bank Transfers will be updated; every time that this updates occur, new entries will be generated in the Balance Updates and Bank Transfers Status Record tables to keep a complete track of how each status changed over time.\\
 
-Every Bank Transfer object generated and stored in Atrato’s database that is already sent through STP as a payment order will have the status In transit, as explained in Chapter 3. Hence, every incoming status update will trigger specific pipelines to a Bank Transfer whose current is In transit. The status to which the Bank Transfer object can changed are furtherly described in this chapter.\\
+Every Bank Transfer object generated and stored in Atrato’s database that is already sent through STP as a payment order will have the status \textit{In transit}, as explained in Chapter 3. Hence, every incoming status update will trigger specific pipelines to a Bank Transfer whose current status is \textit{In transit}. The status to which the Bank Transfer object can changed are furtherly described in this chapter.\\
 
 Every status update will generate an entry in the Logs table with the purpose of keeping a record of every incoming activity form STP. This will be useful for debugging any unexpected or unusual behavior in the balance system of every store.\\
 
@@ -92,14 +92,14 @@ switch (statusUpdate) {
  default:
     await STPController.notifyNotFoundStatusChange(
      req.body,
-     bankTransfe?.id
+     bankTransfer.id
     );
     break;
 }
 
 \end{verbatim}
 
-The status of a Bank Transfer cannot deliberately change from one status to another one. There must be specific events or actions that trigger a specific change form one status to another one. These triggers are described in Figure \ref{fig:state_machine_bank_transfers}. Note how a Bank Transfer with status Waiting for confirmation can only be updated either Cancelled or to the status In transit by sending a new payment order through STP. Both states Cancelled and Rejected can be considered as final states, but the state Applied could still be furtherly updated to Rejected. Once a Bank Transfer is Applied, its state could be considered as a final state, but the rare possibility of the money being returned at some point still exists, even months after the confirmation. For this reason, there is an additional trigger that needs to be considered to update a Bank Transfer’s status from Applied to Rejected; this will be furtherly explained below.
+The status of a Bank Transfer cannot deliberately change from one status to another one. There must be specific events or actions that trigger a specific change form one status to another one. These triggers are described in Figure \ref{fig:state_machine_bank_transfers}. Note how a Bank Transfer with status \textit{Waiting for confirmation} can only be updated either to \textit{Cancelled} or to the status \textit{In transit} by sending a new payment order through STP. Both states \textit{Cancelled} and \textit{Rejected} can be considered as final states, but the state \textit{Applied} could still be furtherly updated to \textit{Rejected}. Once a Bank Transfer is \textit{Applied}, its state could be considered as a final state, but the rare possibility of the money being returned at some point still exists, even months after the confirmation. For this reason, there is an additional trigger that needs to be considered to update a Bank Transfer’s status from \textit{Applied} to \textit{Rejected}; this will be furtherly explained below.
 
 \begin{figure}[H]
     \centering
@@ -109,11 +109,11 @@ The status of a Bank Transfer cannot deliberately change from one status to anot
 
 \subsection{Liquidated status update}
 
-This status notifies a successful bank transfer between Atrato and the receiving party. Once this status update is received the Bank Transfer object’s status related to this payment order will now be updated from In transit to Applied and all the Balance Updates that are related to this Bank Transfer will now update their status to Applied as well. Since this means that a disbursement was successfully made, a new Balance Update of type Disbursement, with status Applied, will be created to subtract to the store’s balance the amount of the Bank Transfer. Any Balance Update of type Disbursement that is created must always have their status set to Applied, so that any following Bank Transfer trigger event will not take this Balance Update into account.\\
+This status notifies a successful bank transfer between Atrato and the receiving party. Once this status update is received, the Bank Transfer object’s status related to this payment order will now be updated from \textit{In transit} to \textit{Applied} and all the Balance Updates that are related to this Bank Transfer will now update their status to \textit{Applied} as well.\\
 
-Furthermore, the credits of which their Balance Update of type Contribution were included in this Bank Transfer can now be flagged as Disbursed. This will only serve as an indication in the merchant’s dashboard showing that these credits have already been disbursed.
+Furthermore, the credits of which their Balance Update of type \textit{Contribution} were included in this Bank Transfer can now be flagged as Disbursed. This will only serve as an indication in the merchant’s dashboard showing that these credits have already been disbursed.
 
-\begin{figure} [h]
+\begin{figure} [H]
     \centering
     \includegraphics[scale = 0.4]{assets/diagrams/LiquidatedStatusUpdate.png}
     \caption{Processing internal status of Balance Updates and Bank Transfer for Liquidated payment orders}\label{fig:liquidated_status_update}
@@ -121,11 +121,11 @@ Furthermore, the credits of which their Balance Update of type Contribution were
 
 \subsection{Cancelled status update}
 
-This status does not happen very often, but still needs to be considered. Whenever a Bank Transfer is cancelled its status will be updated to Cancelled and no further action will be taken regarding a cancelled Bank Transfer, since this is a final state. In terms of the Balance Updates that composed this Bank Transfer, their status will be updated back to Pending, meaning that they could and will be considered for the next Bank Transfer generated once the Bank Transfer’s trigger takes place.\\
+This status does not happen very often, but still needs to be considered. Whenever a Bank Transfer is cancelled its status will be updated to \textit{Cancelled} and no further action will be taken regarding a cancelled Bank Transfer, since this is a final state. In terms of the Balance Updates that composed this Bank Transfer, their status will be updated back to \textit{Pending}, meaning that they could and will be considered for the next Bank Transfer generated once the Bank Transfer’s trigger takes place.\\
 
 This does not necessarily mean that a new Bank Transfer object with the same amount and same related Balance Update objects will be generated because it will depend entirely on the next bank transfer generation event that is triggered and the Balance Updates that have a status of pending by the time the trigger takes place.
 
-\begin{figure} [h]
+\begin{figure} [H]
     \centering
     \includegraphics[scale = 0.4]{assets/diagrams/CancelledStatusUpdate.png}
     \caption{Processing internal status of Balance Updates and Bank Transfer for Cancelled payment orders}\label{fig:cancelled_status_update}
@@ -133,16 +133,4 @@ This does not necessarily mean that a new Bank Transfer object with the same amo
 
 \subsection{Returned status update}
 
-If a payment order is returned, the process that the Bank Transfer object will follow depends on its state. If the state is In transit, meaning it is a Bank Transfer that was recently sent through a payment order, then the Bank Transfer object related to this order will update its status to Rejected and the process regarding to the Balance Updates will be very similar to a cancellation: their status will be updated back to Pending so that they can be considered in a new Bank Transfer in the next trigger. Since no additional updates were made to the store’s general balance then no further action is required, just as in a cancellation.\\
-
-Meanwhile, if the status of the Bank Transfer object is already Applied, then additional to the previous process of updating the Balance Updates back to Pending, further actions need to be taken. Moneywise, the Balance Updates that were previously confirmed, but now the money was returned to Atrato’s account, meaning that they should be considered in a new Bank Transfer.\\
-
-For this specific scenario, a new Balance Update of type Disbursement was already generated when the Bank Transfer was previously confirmed, so a new Balance Update of type Disbursement Override needs to be generated to compensate the changes made to the store’s balance. This new Balance Update will directly update the store’s balance; hence, it will automatically have the status of Applied.\\
-
-By updating the previously confirmed Balance Updates back to Pending, they will eventually be considered into a new Bank Transfer.
-
-\begin{figure} [H]
-    \centering
-    \includegraphics[scale = 0.4]{assets/diagrams/ReturnedStatus.png}
-    \caption{Processing internal status of Balance Updates and Bank Transfer for Returned payment orders. Note the similarity with the Cancelation process}\label{fig:returned_status_update}
-\end{figure}
+The balance system was designed in such way that the cancelation of a bank transfer immediatly compensates de \textit{Disbursement} Balance Update that it generated when it was sent. For these reason, a Cancellation and a Rejection will follow the same logic, the only difference is the status into which they update the Bank Transfer.
