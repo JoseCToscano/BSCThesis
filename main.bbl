@@ -19,6 +19,34 @@
 
 \refsection{0}
   \datalist[entry]{nty/global//global/global}
+    \entry{oracle}{online}{}
+      \name{author}{1}{}{%
+        {{hash=2baf8209f62fd23c32fa375f52fbf33f}{%
+           family={Corporation},
+           familyi={C\bibinitperiod},
+           given={Oracle},
+           giveni={O\bibinitperiod}}}%
+      }
+      \strng{namehash}{2baf8209f62fd23c32fa375f52fbf33f}
+      \strng{fullhash}{2baf8209f62fd23c32fa375f52fbf33f}
+      \strng{bibnamehash}{2baf8209f62fd23c32fa375f52fbf33f}
+      \strng{authorbibnamehash}{2baf8209f62fd23c32fa375f52fbf33f}
+      \strng{authornamehash}{2baf8209f62fd23c32fa375f52fbf33f}
+      \strng{authorfullhash}{2baf8209f62fd23c32fa375f52fbf33f}
+      \field{extraname}{1}
+      \field{sortinit}{C}
+      \field{sortinithash}{4d103a86280481745c9c897c925753c0}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{Naming Conventions}
+      \verb{urlraw}
+      \verb https://www.oracle.com/java/technologies/javase/codeconventions-namingconventions.html
+      \endverb
+      \verb{url}
+      \verb https://www.oracle.com/java/technologies/javase/codeconventions-namingconventions.html
+      \endverb
+      \keyw{variable,naming conventions}
+    \endentry
     \entry{mysqldocs}{online}{}
       \name{author}{1}{}{%
         {{hash=2baf8209f62fd23c32fa375f52fbf33f}{%
@@ -33,6 +61,7 @@
       \strng{authorbibnamehash}{2baf8209f62fd23c32fa375f52fbf33f}
       \strng{authornamehash}{2baf8209f62fd23c32fa375f52fbf33f}
       \strng{authorfullhash}{2baf8209f62fd23c32fa375f52fbf33f}
+      \field{extraname}{2}
       \field{sortinit}{C}
       \field{sortinithash}{4d103a86280481745c9c897c925753c0}
       \field{labelnamesource}{author}
@@ -46,42 +75,33 @@
       \endverb
       \keyw{transaction,commit,rollback,mysql}
     \endentry
-    \entry{oracle}{online}{}
-      \name{author}{1}{}{%
-        {{hash=30162ed78b6c10f731411f2fc440c24f}{%
-           family={Oracle},
-           familyi={O\bibinitperiod}}}%
-      }
-      \strng{namehash}{30162ed78b6c10f731411f2fc440c24f}
-      \strng{fullhash}{30162ed78b6c10f731411f2fc440c24f}
-      \strng{bibnamehash}{30162ed78b6c10f731411f2fc440c24f}
-      \strng{authorbibnamehash}{30162ed78b6c10f731411f2fc440c24f}
-      \strng{authornamehash}{30162ed78b6c10f731411f2fc440c24f}
-      \strng{authorfullhash}{30162ed78b6c10f731411f2fc440c24f}
-      \field{sortinit}{O}
-      \field{sortinithash}{2cd7140a07aea5341f9e2771efe90aae}
-      \field{labelnamesource}{author}
-      \field{labeltitlesource}{title}
-      \field{title}{Pending}
-      \keyw{spei}
-    \endentry
     \entry{spei}{online}{}
       \name{author}{1}{}{%
-        {{hash=d636b2bccc80aafd10f1b343d42eacd7}{%
-           family={SPEI},
-           familyi={S\bibinitperiod}}}%
+        {{hash=2c9dc60a1422cd160eb0778fdf7ef932}{%
+           family={México},
+           familyi={M\bibinitperiod},
+           given={Banco},
+           giveni={B\bibinitperiod},
+           prefix={de},
+           prefixi={d\bibinitperiod}}}%
       }
-      \strng{namehash}{d636b2bccc80aafd10f1b343d42eacd7}
-      \strng{fullhash}{d636b2bccc80aafd10f1b343d42eacd7}
-      \strng{bibnamehash}{d636b2bccc80aafd10f1b343d42eacd7}
-      \strng{authorbibnamehash}{d636b2bccc80aafd10f1b343d42eacd7}
-      \strng{authornamehash}{d636b2bccc80aafd10f1b343d42eacd7}
-      \strng{authorfullhash}{d636b2bccc80aafd10f1b343d42eacd7}
-      \field{sortinit}{S}
-      \field{sortinithash}{b164b07b29984b41daf1e85279fbc5ab}
+      \strng{namehash}{2c9dc60a1422cd160eb0778fdf7ef932}
+      \strng{fullhash}{2c9dc60a1422cd160eb0778fdf7ef932}
+      \strng{bibnamehash}{2c9dc60a1422cd160eb0778fdf7ef932}
+      \strng{authorbibnamehash}{2c9dc60a1422cd160eb0778fdf7ef932}
+      \strng{authornamehash}{2c9dc60a1422cd160eb0778fdf7ef932}
+      \strng{authorfullhash}{2c9dc60a1422cd160eb0778fdf7ef932}
+      \field{sortinit}{M}
+      \field{sortinithash}{4625c616857f13d17ce56f7d4f97d451}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
-      \field{title}{Pending}
+      \field{title}{Características del Sistema de Pagos Electrónicos Interbancarios}
+      \verb{urlraw}
+      \verb https://www.banxico.org.mx/servicios/spei_-transferencias-banco-me.html
+      \endverb
+      \verb{url}
+      \verb https://www.banxico.org.mx/servicios/spei_-transferencias-banco-me.html
+      \endverb
       \keyw{spei}
     \endentry
     \entry{stp}{online}{}
@@ -100,8 +120,14 @@
       \field{sortinithash}{b164b07b29984b41daf1e85279fbc5ab}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
-      \field{title}{Pending}
-      \keyw{stp}
+      \field{title}{RegistraOrden (Dispersión)}
+      \verb{urlraw}
+      \verb https://stpmex.zendesk.com/hc/es/articles/360059428591-RegistraOrden-Dispersi%C3%B3n-
+      \endverb
+      \verb{url}
+      \verb https://stpmex.zendesk.com/hc/es/articles/360059428591-RegistraOrden-Dispersi%C3%B3n-
+      \endverb
+      \keyw{stp,dispersion}
     \endentry
     \entry{typeorm}{online}{}
       \name{author}{1}{}{%
